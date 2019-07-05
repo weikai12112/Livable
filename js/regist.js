@@ -95,6 +95,8 @@ $(document).ready(function () {
                     alert('服务器开小差啦');
                 }
             })
+        }else {
+            alert('请填写邮箱');
         }
     }
     let RegistFunction=new CreateRegistFunction();
@@ -102,67 +104,56 @@ $(document).ready(function () {
     (function main() {
         $('.RegistInput').blur(function () {
             let innervalue=event.path[0].value;
+            console.log(event.path[0].id);
             switch (event.path[0].id) {
                 case 'Name':(function () {
                     if (innervalue>0&&innervalue<5&& RegistFunction.DetectionSymbol(innervalue)){
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='√';
                         RegistFunction.AllowRegistration[0]=true;
                     } else {
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='×';
                         RegistFunction.AllowRegistration[0]=false;
                         alert('请输入正确的姓名');
                     }
-                });break;
+                })();break;
                 case 'Sex':(function () {
                     if (innervalue){
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='√';
                         RegistFunction.AllowRegistration[1]=true;
                     } else {
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='×';
                         RegistFunction.AllowRegistration[1]=false;
                         alert('请选择性别');
                     }
-                });break;
+                })();break;
                 case 'Password':(function () {
                     if (RegistFunction.DetectionSymbol(innervalue)&&RegistFunction.DetectionNum(innervalue)){
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='√';
                         RegistFunction.AllowRegistration[2]=true;
                     } else {
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='×';
                         RegistFunction.AllowRegistration[2]=false;
                         alert('请输入正确的密码');
                     }
-                });break;
+                })();break;
                 case 'Passwords':(function () {
                     if (document.getElementById('Password').value==document.getElementById('Passwords').value){
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='√';
                         RegistFunction.AllowRegistration[3]=true;
                     } else {
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='×';
                         RegistFunction.AllowRegistration[3]=false;
                         alert('两次密码不一致');
                     }
-                });break;
+                })();break;
                 case 'Email':(function () {
                     if (RegistFunction.DetectionEmail(innervalue)){
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='√';
                         RegistFunction.AllowRegistration[4]=true;
                     } else {
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='×';
                         RegistFunction.AllowRegistration[4]=false;
                         alert('请输入正确的邮箱');
                     }
-                });break;
+                })();break;
                 case 'EmailKey':(function () {
                     if (innervalue){
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='√';
                         RegistFunction.AllowRegistration[5]=true;
                     } else {
-                        event.path[1].getElementsByClassName('information')[0].innerHTML='×';
                         RegistFunction.AllowRegistration[5]=false;
                         alert('请输入验证码');
                     }
-                });break;
+                })();break;
             }
         })
         $('#ToRegist').click(function () {
@@ -174,6 +165,6 @@ $(document).ready(function () {
                 alert('您有信息未填写或者填写有误');
             }
         })
-        $('#GetEmailKey').click(RegistFunction.getEmailKey())
-    })
+        $('#GetEmailKey').click(RegistFunction.getEmailKey)
+    })()
 })
