@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宜居</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/choseCity.css">
+</head>
+<body>
+<div>
+    <fieldset>
+        <legend>按级选中省市县/区</legend>
+        <label for="addr-show02">您选择的是：
+            <input type="text" id="addr-show02">
+        </label>
+        <div id="addr-choice">
+            <ul id="title-wrap">
+                <li value="0">省份</li>
+                <li value="1">城市</li>
+                <li value="2">县区</li>
+            </ul>
+            <div id="show-panel">
+                <ul id="addr-wrap">
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn met2">确定</button>
+    </fieldset>
+</div>
+</body>
+<script rel="script" src="../js/jquery-3.3.1.js"></script>
+<script rel="script" src="../js/bootstrap.js"></script>
+<script rel="script" src="../js/index.js"></script>
+<script rel="script" src="../js/choseCity.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+</html>
