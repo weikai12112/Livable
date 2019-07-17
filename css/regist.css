@@ -10,6 +10,7 @@ body{
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
 .registBody{
     position: relative;
 }
@@ -84,4 +85,10 @@ input-group-addon{
 }
 #GetEmailKey{
     margin-top: 20px;
+}
+@media screen and (max-width: 960px) {
+    .background img{
+
+        height: 600px!important;
+    }
 }

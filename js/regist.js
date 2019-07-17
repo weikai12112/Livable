@@ -1,4 +1,4 @@
-注意事项:
+// 注意事项:
 
 // 含有部分为
 // 姓名(Name)
@@ -15,6 +15,7 @@
 
 $(document).ready(function () {
     const URL='';
+    let PromptBox=new CreatPromptBox();
     let CreateRegistFunction=function () {
         this.AllowRegistration=[false,false,false,false,false,false];
     };
@@ -34,13 +35,13 @@ $(document).ready(function () {
             },
             success: function (result) {
                 if(result.code=='200'){
-                    alert('注册成功');
+                    PromptBox.displayPromptBox('注册成功');
                     window.location='index.html'
                 }
-                else alert(result.msg);
+                else PromptBox.displayPromptBox(result.msg);
             },
             error: function () {
-                alert('服务器开小差啦');
+                PromptBox.displayPromptBox('服务器开小差啦');
             }
         })
     }
@@ -49,7 +50,7 @@ $(document).ready(function () {
             regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im;
 
         if(regEn.test(value) || regCn.test(value)) {
-            alert("不能包含特殊字符");
+            PromptBox.displayPromptBox("不能包含特殊字符");
             return false;
         }else {
            return true;
@@ -60,10 +61,10 @@ $(document).ready(function () {
             return true;
         }else {
             if (value.length>18) {
-                alert('输入超过18个字符，请重新输入');
+                PromptBox.displayPromptBox('输入超过18个字符，请重新输入');
                 return false;
             }else {
-                alert('账号密码小于6个字符，请重新输入');
+                PromptBox.displayPromptBox('账号密码小于6个字符，请重新输入');
                 return false;
             }
 
@@ -86,22 +87,23 @@ $(document).ready(function () {
                 },
                 success: function (result) {
                     if(result.code=='200'){
-                        alert('验证码已发送，请前往登陆邮箱查收');
+                        PromptBox.displayPromptBox('验证码已发送，请前往登陆邮箱查收');
 
                     }
-                    else alert(result.msg);
+                    else PromptBox.displayPromptBox(result.msg);
                 },
                 error: function () {
-                    alert('服务器开小差啦');
+                    PromptBox.displayPromptBox('服务器开小差啦');
                 }
             })
         }else {
-            alert('请填写邮箱');
+            PromptBox.displayPromptBox('请填写邮箱');
         }
     }
     let RegistFunction=new CreateRegistFunction();
 
     (function main() {
+
         $('.RegistInput').blur(function () {
             let innervalue=event.path[0].value;
             console.log(event.path[0].id);
@@ -111,7 +113,7 @@ $(document).ready(function () {
                         RegistFunction.AllowRegistration[0]=true;
                     } else {
                         RegistFunction.AllowRegistration[0]=false;
-                        alert('请输入正确的姓名');
+                        PromptBox.displayPromptBox('请输入正确的姓名');
                     }
                 })();break;
                 case 'Sex':(function () {
@@ -119,7 +121,7 @@ $(document).ready(function () {
                         RegistFunction.AllowRegistration[1]=true;
                     } else {
                         RegistFunction.AllowRegistration[1]=false;
-                        alert('请选择性别');
+                        PromptBox.displayPromptBox('请选择性别');
                     }
                 })();break;
                 case 'Password':(function () {
@@ -127,7 +129,7 @@ $(document).ready(function () {
                         RegistFunction.AllowRegistration[2]=true;
                     } else {
                         RegistFunction.AllowRegistration[2]=false;
-                        alert('请输入正确的密码');
+                        PromptBox.displayPromptBox('请输入正确的密码');
                     }
                 })();break;
                 case 'Passwords':(function () {
@@ -135,7 +137,7 @@ $(document).ready(function () {
                         RegistFunction.AllowRegistration[3]=true;
                     } else {
                         RegistFunction.AllowRegistration[3]=false;
-                        alert('两次密码不一致');
+                        PromptBox.displayPromptBox('两次密码不一致');
                     }
                 })();break;
                 case 'Email':(function () {
@@ -143,7 +145,7 @@ $(document).ready(function () {
                         RegistFunction.AllowRegistration[4]=true;
                     } else {
                         RegistFunction.AllowRegistration[4]=false;
-                        alert('请输入正确的邮箱');
+                        PromptBox.displayPromptBox('请输入正确的邮箱');
                     }
                 })();break;
                 case 'EmailKey':(function () {
@@ -151,7 +153,7 @@ $(document).ready(function () {
                         RegistFunction.AllowRegistration[5]=true;
                     } else {
                         RegistFunction.AllowRegistration[5]=false;
-                        alert('请输入验证码');
+                        PromptBox.displayPromptBox('请输入验证码');
                     }
                 })();break;
             }
@@ -162,9 +164,10 @@ $(document).ready(function () {
             if (Status){
                 RegistFunction.regist();
             } else {
-                alert('您有信息未填写或者填写有误');
+                PromptBox.displayPromptBox('您有信息未填写或者填写有误');
             }
         })
         $('#GetEmailKey').click(RegistFunction.getEmailKey)
+
     })()
 })
