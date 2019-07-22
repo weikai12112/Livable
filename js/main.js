@@ -1,3 +1,4 @@
+const URL='';
 let CreatPromptBox =function(){
     let newNode=document.createElement('div');
     newNode.classList.add('PromptBox');

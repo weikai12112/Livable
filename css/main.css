@@ -65,7 +65,13 @@
 .information {
     display: inline-block;
 }
+.text-red{
+    color: red;
 
+}
+.margin-bottom-sm{
+    margin-bottom: 10px;
+}
 /*---------------------------------消息提示框-----------------------------------------*/
 .PromptBox{
     position: fixed;
