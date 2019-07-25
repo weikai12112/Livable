@@ -8,7 +8,7 @@ let CreatPromptBox =function(){
 }
 CreatPromptBox.prototype.displayPromptBox=function(text){
     this.newNode.innerText=text;
-    $(this.newNode).fadeIn(1000);
+    $(this.newNode).fadeIn(1000); 
     $(this.newNode).fadeOut(3000);
 }
 
