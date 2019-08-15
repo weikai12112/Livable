@@ -1722,6 +1722,7 @@ $(document).ready(function () {
     /*点击确定后恢复成初始状态，且将所选地点显示在输入框中*/
     btn2.onclick = function () {
         addrShow02.value = current2.provVal + ' ' + current2.cityVal + ' ' + current2.countryVal;
+        $('#choseCity')[0].value=current2.provVal + ' ' + current2.cityVal + ' ' + current2.countryVal;
         addrWrap.getElementsByTagName('li')[current2.country].style.backgroundColor = '';
     };
 

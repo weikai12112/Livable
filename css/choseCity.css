@@ -5,15 +5,18 @@
 }
 
 fieldset {
-    width: 540px;
+    width: 400px;
     padding: 20px;
-    margin: 30px;
+    margin: 10px;
     border: 1px solid #ccc;
 }
 
 legend{
     font-size: 18px;
     font-weight: bold;
+    margin-bottom:0px;
+    border: none;
+    width: auto;
 }
 
 #addr-show, #addr-show02,#addr-show03{
@@ -26,15 +29,15 @@ legend{
     width: 80px;
     height: 30px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: none;
     outline: none;
-    background-color: #aaa;
+    background-color: #ff9966;
     margin: 0 20px;
+    color: white;
+    font-weight: bold;
+    opacity: 1!important;
 }
 
-.btn:disabled{
-    background-color:#ccc;
-}
 
 /*方法一样式部分*/
 select {
@@ -58,16 +61,19 @@ select {
 }
 
 #title-wrap li{
-    width:163px;
+    width:114px;
     height: 45px;
     line-height: 45px;
     margin-bottom: 10px;
 }
 
 .titleSel{
-    border-bottom: 2px solid #23B7E5;
+    border-bottom: 2px solid #ff9966;
 }
-
+#addr-wrap{
+    height: 200px;
+    overflow-y: scroll;
+}
 #addr-wrap li{
     width: 83px;
     height: 30px;
@@ -77,9 +83,10 @@ select {
     overflow:hidden;
     white-space:nowrap;
     text-overflow:ellipsis;
+    font-weight: normal;
 }
 #addr-wrap li:hover{
-    background-color: #23B7E5;
+    background-color: rgba(102,209,242,0.7);
 }
 
 /*方法三样式部分*/
@@ -98,6 +105,7 @@ select {
     font-size: 14px;
     line-height: 31px;
     cursor: default;
+
 }
 
 .cityOn{

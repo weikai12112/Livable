@@ -1,3 +1,16 @@
+body{
+    overflow-x: hidden;
+}
+#horizontalScreenTips{
+    position: fixed;
+    background-image: url("../img/horizontalScreenTips.gif");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
 .head{
     height: 90px;
     border-bottom: 2px #df8e3e solid;
