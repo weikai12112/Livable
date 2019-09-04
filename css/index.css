@@ -40,6 +40,7 @@ body>div{
 }
 .headTop>div:first-child>div{
     margin-top: 3px;
+    margin-left: 4px;
 }
 .headTop>div:nth-child(3),
 .headTop>div:last-child{
@@ -113,7 +114,6 @@ body>div{
     height:48px;
     border-left: none;
 }
-
 .headFoot>div>span{
     top: 0;
     border-right: none;
@@ -143,15 +143,17 @@ body>div{
 
 .indexBody{
     background-color: white;
-    z-index: 4;
+    z-index: 2;
 }
 
 .displayImg{
     padding-top:40px ;
     padding-bottom:40px;
+    z-index: 3;
 }
 .displayImg img{
     height: 300px;
+    z-index: 4;
 }
 .displayImg>div{
     display: inline-block;

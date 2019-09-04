@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>宜居-注册</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/regist.css">
 </head>
@@ -47,7 +48,7 @@
             <a class="carousel-control right" href="#myCarousel"
                data-slide="next"><span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
-        <div class="registinner col-lg-3 col-lg-offset-7 col-md-4 col-md-offset-6 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+        <div class="registinner animated bounceInDown col-lg-3 col-lg-offset-7 col-md-4 col-md-offset-6 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
             <div>
                 <div></div>
                 <div class="col-lg-4 col-lg-offset-4 col-md-4 col-lg-md-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">欢迎注册</div>
@@ -55,34 +56,34 @@
             <div class="registInnerBody form-group">
                 <div class="input-group col-lg-8 col-md-9 margin-top-sm">
                     <div class="input-group-addon Registlabel"><embed class="registSvg" src="../svg/mail.svg"></div>
-                    <input type="text" class="form-control RegistInput" id="Email" placeholder="请输入邮箱">
+                    <input type="text" class="form-control RegistInput" id="Email" placeholder="请输入邮箱" tabindex="1">
                 </div>
                 <div class="form-group col-lg-4 col-md-5 margin-top-sm pull-right">
-                    <select class="form-control" id="Sex">
+                    <select class="form-control" id="Sex" tabindex="2">
                         <option value="man">男</option>
                         <option value="woman">女</option>
                     </select>
                 </div>
                 <div class="input-group col-lg-5 margin-top-sm">
                     <div class="input-group-addon Registlabel"><embed class="registSvg" src="../svg/NameCard.svg"></div>
-                    <input type="text" class="form-control RegistInput" id="Name" placeholder="请输入姓名">
+                    <input type="text" class="form-control RegistInput" id="Name" placeholder="请输入姓名" tabindex="3">
                 </div>
 
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0 margin-top-sm">
                     <div class="input-group-addon Registlabel"><embed class="registSvg" src="../svg/key.svg"></div>
-                    <input type="text" class="form-control RegistInput" id="Password" placeholder="请输入密码">
+                    <input type="text" class="form-control RegistInput" id="Password" placeholder="请输入密码" tabindex="4">
                 </div>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0 margin-top-sm">
                     <div class="input-group-addon Registlabel"><embed class="registSvg" src="../svg/keyword.svg"></div>
-                    <input type="text" class="form-control RegistInput" id="Passwords" placeholder="请再次输入验证密码">
+                    <input type="text" class="form-control RegistInput" id="Passwords" placeholder="请再次输入验证密码" tabindex="5">
                 </div>
-                <input type="button" id="GetEmailKey" class="btn btn-success col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right" value="获取验证码">
+                <input type="button" id="GetEmailKey" class="btn btn-success col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right " value="获取验证码">
                 <div class="input-group col-lg-6 mb-2 mr-sm-2 mb-sm-0 margin-top-sm">
                     <div class="input-group-addon Registlabel"><embed class="registSvg" src="../svg/Verification%20code_ic.svg"></div>
-                    <input type="text" class="form-control RegistInput" id="EmailKey" placeholder="请输入验证码">
+                    <input type="text" class="form-control RegistInput" id="EmailKey" placeholder="请输入验证码" tabindex="6">
                 </div>
 
-                <input type="button" id="ToRegist" class="btn   col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-xs-offset-1 col-md-offset-1 col-sm-offset-1" value="注册">
+                <input type="button" id="ToRegist" class="btn animated  col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-xs-offset-1 col-md-offset-1 col-sm-offset-1" value="注册" tabindex="7">
             </div>
         </div>
 

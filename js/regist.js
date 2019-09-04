@@ -17,7 +17,9 @@ $(document).ready(function () {
     let PromptBox=new CreatPromptBox();
     let CreateRegistFunction=function () {
         this.AllowRegistration=[false,false,false,false,false,false];
+
     };
+    CreateRegistFunction.prototype.time=0;
     CreateRegistFunction.prototype.regist=function() {
         $.ajax({
             type: 'post',
@@ -74,7 +76,25 @@ $(document).ready(function () {
         return reg.test(str);
     }
     CreateRegistFunction.prototype.getEmailKey=function(){
-        if (RegistFunction.DetectionEmail(document.getElementById('Email').value)){
+        console.log()
+        if (RegistFunction.DetectionEmail(document.getElementById('EmailKey').value) && CreateRegistFunction.prototype.time==0){
+            $('#GetEmailKey').removeClass('btn-success');
+            $('#GetEmailKey').addClass('disabled');
+
+            (function () {
+                CreateRegistFunction.prototype.time=30;
+              let IntvId=setInterval(function () {
+                  if (CreateRegistFunction.prototype.time>0){
+                      CreateRegistFunction.prototype.time--;
+                      document.getElementById('GetEmailKey').value=CreateRegistFunction.prototype.time;
+                  }else {
+                      $('#GetEmailKey').removeClass('disabled');
+                      $('#GetEmailKey').addClass('btn-success');
+                      document.getElementById('GetEmailKey').value='获取验证码';
+                      window.clearInterval(IntvId);
+                  }
+              },1000)
+            })()
             $.ajax({
                 type: 'post',
                 url: URL + '/regist',
@@ -96,7 +116,11 @@ $(document).ready(function () {
                 }
             })
         }else {
-            PromptBox.displayPromptBox('请填写邮箱');
+            if (!RegistFunction.DetectionEmail(document.getElementById('EmailKey').value)){
+                PromptBox.displayPromptBox('请填写邮箱');
+            }else {
+                PromptBox.displayPromptBox('获取验证码过于频繁');
+            }
         }
     }
     let RegistFunction=new CreateRegistFunction();
@@ -160,13 +184,25 @@ $(document).ready(function () {
         $('#ToRegist').click(function () {
             let Status=true;
             for (let i=0;i<6;i++,Status=Status&RegistFunction.AllowRegistration[i]);
+            $('#ToRegist').addClass('rubberBand');
             if (Status){
                 RegistFunction.regist();
+                $('#ToRegist').on('animationend',function () {
+                    $('#ToRegist').removeClass('rubberBand')
+                })
             } else {
                 PromptBox.displayPromptBox('您有信息未填写或者填写有误');
+                $('#ToRegist').on('animationend',function () {
+                    $('#ToRegist').removeClass('rubberBand')
+                })
             }
         })
         $('#GetEmailKey').click(RegistFunction.getEmailKey)
+        $('.registInnerBody>div>input').on('keypress',function () {
+            if (event.keyCode==13){
+                $('#ToRegist').click();
+            }
+        })
 
     })()
 })

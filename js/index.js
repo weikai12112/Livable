@@ -58,5 +58,11 @@ $(document).ready(function () {
     $('#choseCity').focus(function () {
         $('.choseCity').eq(0).removeClass('hidden');
     })
+    $('#toFindHome').click(function () {
+        $('#toFindHome').addClass('rubberBand');
+    })
+    $('#toFindHome').on('animationend',function () {
+        $('#toFindHome').removeClass('rubberBand')
+    })
     checkScreen();
 })

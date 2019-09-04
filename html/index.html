@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>宜居</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/choseCity.css">
@@ -35,9 +36,9 @@
         </div>
 
         <div class="col-lg-2 col-sm-2">
-                <a href="login.html">登陆</a>
-                <span>|</span>
-                <a href="regist.html">注册</a>
+            <a href="login.html">登陆</a>
+            <span>|</span>
+            <a href="regist.html">注册</a>
         </div>
     </div>
 
@@ -49,49 +50,49 @@
     </div>
 
     <div class="headFoot col-lg-12">
-            <div class="col-lg-12">
-                <div class="col-lg-offset-2 col-sm-offset-1 col-xs-offset-1">
-                    <img src="../img/familyGo.png">
-                </div>
+        <div class="col-lg-12">
+            <div class="col-lg-offset-2 col-sm-offset-1 col-xs-offset-1">
+                <img src="../img/familyGo.png">
             </div>
-            <div class="input-group pull-left col-lg-3 col-sm-4 col-xs-4 col-lg-offset-2 col-sm-offset-1 col-xs-offset-1">
-                <span class="input-group-addon glyphicon glyphicon-map-marker"></span>
-                <input id="choseCity" class="form-control" type="text" placeholder="请输入目的地、城市、景点">
-            </div >
-            <div class="input-group pull-left col-lg-3 col-sm-4 col-xs-4">
-                <span class="input-group-addon glyphicon glyphicon-time"></span>
-                <input class="form-control" type="text" placeholder="入住日期-退房日期">
-            </div>
+        </div>
+        <div class="input-group pull-left col-lg-3 col-sm-4 col-xs-4 col-lg-offset-2 col-sm-offset-1 col-xs-offset-1">
+            <span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+            <input id="choseCity" class="form-control" type="text" placeholder="请输入目的地、城市、景点">
+        </div >
+        <div class="input-group pull-left col-lg-3 col-sm-4 col-xs-4">
+            <span class="input-group-addon glyphicon glyphicon-time"></span>
+            <input class="form-control" type="text" placeholder="入住日期-退房日期">
+        </div>
 
-            <input class="pull-left btn" type="button" value="开始找房">
-            <div class="col-lg-12">
-                <div class="col-lg-offset-2 choseCity hidden">
-                    <fieldset>
-                        <legend>按级选中省市县/区</legend>
-                        <label for="addr-show02" class="hidden">您选择的是：
-                            <input type="text" id="addr-show02">
-                        </label>
-                        <div id="addr-choice">
-                            <ul id="title-wrap">
-                                <li value="0">省份</li>
-                                <li value="1">城市</li>
-                                <li value="2">县区</li>
+        <input id="toFindHome" class="pull-left btn animated" type="button" value="开始找房">
+        <div class="col-lg-12">
+            <div class="col-lg-offset-2 choseCity hidden">
+                <fieldset>
+                    <legend>按级选中省市县/区</legend>
+                    <label for="addr-show02" class="hidden">您选择的是：
+                        <input type="text" id="addr-show02">
+                    </label>
+                    <div id="addr-choice">
+                        <ul id="title-wrap">
+                            <li value="0">省份</li>
+                            <li value="1">城市</li>
+                            <li value="2">县区</li>
+                        </ul>
+                        <div id="show-panel">
+                            <ul id="addr-wrap">
                             </ul>
-                            <div id="show-panel">
-                                <ul id="addr-wrap">
-                                </ul>
-                            </div>
                         </div>
-                        <button type="button" class="btn met2 pull-right">确定</button>
-                    </fieldset>
-                </div>
+                    </div>
+                    <button type="button" class="btn met2 pull-right">确定</button>
+                </fieldset>
             </div>
+        </div>
 
     </div>
 </div>
 
 <div class="indexBody row">
-    <div class="displayImg col-lg-12">
+    <div class="displayImg col-lg-12 animated bounceInLeft">
         <img class="col-lg-2 col-sm-3 col-xs-3 col-lg-offset-2 col-sm-offset-1 col-xs-offset-1 pull-left" src="../img/indexFoot1.jpg">
 
         <div class="col-lg-2 col-sm-4 col-xs-4 col-lg-offset-1">
