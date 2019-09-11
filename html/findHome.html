@@ -5,6 +5,7 @@
     <title>宜居-找房</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/findHmoe.css">
 </head>
@@ -63,7 +64,7 @@
 
             <div class="queryCriteria margin-top-lg row">
                 <div class="pull-left">
-                    <div class="">
+                    <div class="" id="choseCity">
                         <img src="../img/lie.png">北京
                     </div>
 
@@ -72,7 +73,7 @@
 
 
                 <div class="pull-left col-lg-offset-1 col-sm-offset-2">
-                    <input class="pull-left" readonly="readonly" placeholder="请选择日期">
+                    <input class="pull-left" name="starttime"  id="starttime" readonly="readonly" placeholder="请选择日期">
                     <span class="pull-left"><img src="../img/calendar.png"></span>
                 </div>
 
@@ -246,6 +247,7 @@
 </body>
 <script rel="script" src="../js/jquery-3.3.1.js"></script>
 <script rel="script" src="../js/bootstrap.js"></script>
+<script rel="script" src="../js/bootstrap-datetimepicker.min.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 <script rel="script" src="../js/main.js"></script>
 <script rel="script" src="../js/findHmoe.js"></script>

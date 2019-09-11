@@ -34,6 +34,10 @@ IndexInformation.getLocation=function () {
     var cityName=returnCitySN.cname.split("省")[1];
     if (returnCitySN.cname){
         $('#city')[0].innerHTML=cityName;
+        if (document.getElementById('choseCity')){
+            document.getElementById('choseCity').innerHTML="<img src=\"../img/lie.png\">"+cityName;
+
+        }
     } else {
         $('#city')[0].innerHTML='北京';
     }
