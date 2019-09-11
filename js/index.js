@@ -8,6 +8,7 @@ $(document).ready(function () {
 
     IndexInformation.getLocation=function () {
         var cityCode=returnCitySN.cid;              //获取城市
+        console.log(returnCitySN.cid);
         var cityName=returnCitySN.cname.split("省")[1];
         if (returnCitySN.cname){
             $('#city')[0].innerHTML=cityName;

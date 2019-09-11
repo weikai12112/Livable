@@ -14,7 +14,7 @@
 // -----------------------------------------------------------------------------------------------
 
 $(document).ready(function () {
-    let PromptBox=new CreatPromptBox();
+
     let CreateRegistFunction=function () {
         this.AllowRegistration=[false,false,false,false,false,false];
 

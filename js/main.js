@@ -24,3 +24,48 @@ let checkScreen=function (){
     },1000)
 
 }
+
+let IndexInformation={
+
+}
+
+IndexInformation.getLocation=function () {
+    var cityCode=returnCitySN.cid;              //获取城市
+    var cityName=returnCitySN.cname.split("省")[1];
+    if (returnCitySN.cname){
+        $('#city')[0].innerHTML=cityName;
+    } else {
+        $('#city')[0].innerHTML='北京';
+    }
+
+}
+IndexInformation.findHome=function () {
+    let city=document.getElementById('city').innerText.split(" ");
+    if (!city){
+        $.ajax({
+            type: 'post',
+            url: URL + '/findHome',
+            contentType: 'application/x-www-form-urlencoded',
+            dataType: 'json',
+            async: true,
+            data: {
+                city:city[2],
+            },
+            success: function (result) {
+                if(result.code=='200'){
+                    document.getElementById('Name').innerHTML=result.data.Name;
+                }
+                else alert(result.msg);
+            },
+            error: function () {
+                alert('服务器开小差啦');
+            }
+        })
+    }else {
+        alert('请选择你的地址');
+    }
+
+}
+
+
+IndexInformation.getLocation();
