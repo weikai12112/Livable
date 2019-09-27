@@ -1,0 +1,108 @@
+body{
+ overflow: hidden;
+}
+
+.text{
+    height: 600px;
+
+}
+.text>div:first-child{
+    padding:27px;
+}
+.gunbo>div:first-child{
+    float: right;
+    width: 600px;
+    height: 500px;
+    margin-right: 20px;
+}
+.H1{
+    margin-top:3px;
+    font-weight: bolder;
+}
+.color{
+    color: #2f937d;
+    float: left;
+    margin-right: 2px;
+}
+.alinfo{
+    position: fixed;
+    float: right;
+    right: 0;
+    border-left: #9d9d9d solid 1px;
+}
+.imfo{
+    width: 400px;
+    height: 400px;
+    border-style:solid;
+    border-width:1px;
+    border-radius: 15px;
+    border-color: #9d9d9d;
+    padding: 30px;
+}
+.money{
+    font-family: 微软雅黑;
+    font-size: 32px;
+    color: #f3981c;
+    font-weight: bolder;
+    margin-bottom: 5px;
+}
+.gn{
+    width: auto;
+    background-color: #fef3e5;
+    color: #f3981c;
+    margin-right: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: #ffdaac solid 1px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.Authentication{
+    width: 25px;
+    float: left;
+    margin-right: 5px;
+    color: #2f937d;
+}
+.tb1{
+    border-collapse:separate; border-spacing:0px 30px;
+}
+.star{
+    color:#2f937d ;
+}
+.tr1{
+    font-family: 微软雅黑;
+    font-size: 25px;
+}
+.tr2{
+    color: #9d9d9d;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    height: 10px;
+}
+.gunbo{
+    width: 600px;
+    height: 380px;
+    overflow: hidden;
+    float: right;
+}
+.st > li {
+    width: 50px;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
