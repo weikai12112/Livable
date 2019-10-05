@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,target-densitydpi=device-dpi" />
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/fangyuan.css">
@@ -48,7 +49,8 @@
 </div>
             <div class="row text">
                 <div></div>
-                <div class="col-lg-7 col-md-7 col-sm-7" >
+                <div class="alLeft">
+                <div class="Left pull-right" >
                     <div id="myCarousel" class="carousel slide background gunbo">
                         <!-- 轮播（Carousel）指标 -->
                         <ol class="carousel-indicators">
@@ -71,16 +73,174 @@
                         <a class="carousel-control right" href="#myCarousel"
                            data-slide="next"><span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
-                    <div>
-                        <a>房东说</a>
+                    <div class="minNav">
+                        <a href="#say1">房东说</a>
                         <p>·</p>
-                        <a>配套设施</a>
+                        <a href="#say2">配套设施</a>
                         <p>·</p>
-                        <a>评价</a>
+                        <a href="#say3">评价</a>
                         <p>·</p>
-                        <a>周边情况</a>
+                        <a href="#say4">周边情况</a>
+                    </div>
+                    <div class="say">
+                        <table>
+                            <tr>
+                                <td class="ownerSay" id="say1"><div ></div>房东说</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="name1">房东昵称：</div><div class="name2">围开哥哥</div><a href="#" class="connet">联系房东</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="eval1">共</div><div class="eval2">12</div><div class="eval1">条评价</div><img src="../img/authen.png" class="authen" /><div class="eval3"> 已认证</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="ownerSayText">房源两室两居南北通透的两居室，主卧朝南，可以沐浴在阳光享受美好的生活,大大的落地窗，采光绝对没得说，楼上直接看到JFS和春晚。</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="say" id="say2">
+                        <div class="ownerSay">配套设施</div>
+                        <div class="facilities">
+                            <div class="gas"><img src="../img/gas.png"></div>
+                            <div class="HairDrierr"> <img src="../img/HairDrier.png"></div>
+                            <div class="HeatingCooling"><img src="../img/HeatingCooling.png"></div>
+                            <div class="TV"><img src="../img/TV.png"></div>
+                            <div class="WashSupplies"> <img src="../img/WashSupplies.png"></div>
+                            <div class="wifi"> <img src="../img/wifi.png"></div>
+                        </div>
+                        <a href="#" class="more">更多设施</a>
+                    </div>
+                    <div class="say" id="say3">
+                        <div class="ownerSay">评价</div>
+                        <div>
+                            <table>
+                                <tr><div class="glyphicon glyphicon-star star"></div></tr>
+                                <tr><div class="glyphicon glyphicon-star star"></div></tr>
+                                <tr><div class="glyphicon glyphicon-star star"></div></tr>
+                                <tr><div class="glyphicon glyphicon-star star"></div></tr>
+                                <tr><div class="glyphicon glyphicon-star star"></div></tr>
+                                <tr>7条用户评价</tr>
+                            </table>
+                            <div class="user1">
+                                <img src="../img/houseOwner.png">
+                                <div>用户昵称</div>
+                                <div>2019年6月</div>
+                            </div>
+                            <div class="userText">
+                                位置挺不错，房东人很好，但是厕所有异味。
+                            </div>
+                            <div class="user1">
+                                <img src="../img/houseOwner.png">
+                                <div>用户昵称</div>
+                                <div>2019年6月</div>
+                            </div>
+                            <div class="userText">
+                                周围有很多小吃店超市等，很方便。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="say" id="say4">
+                        <div class="ownerSay">周边情况</div>
+                        <div class="Position"><spam class="glyphicon glyphicon-map-marker Position"></div><div>中国·湛江</div></spam>
+                        <table class="Situation">
+                            <tr>
+                                <td class="Situation">学校</td>
+                                <td class="SituatText">兴隆中心小学（6.69公里）湛江市兴隆幼儿园附近（3.45公里）万宁市民族中学（7.78公里）</td>
+                            </tr>
+                            <tr>
+                                <td class="Situation">购物</td>
+                                <td class="SituatText">美肤宝（侨香路）（1.35公里）奥特莱斯（3.95公里）美的（1.35公里）</td>
+                            </tr>
+                            <tr>
+                                <td class="Situation">医院</td>
+                                <td class="SituatText">东和医院（7.4公里）</td>
+                            </tr>
+                            <tr>
+                                <td class="Situation">娱乐</td>
+                                <td class="SituatText">古乐园（1.2公里）红艺人演出中心（6.1公里）三角梅主题公园（1.14公里）</td>
+                            </tr>
+                            <tr>
+                                <td class="Situation">餐厅</td>
+                                <td class="SituatText">老巴刹新加坡餐厅（560米）兴欣阁（1公里）</td>
+                            </tr>
+                        </table>
+                        <div class="map">map</div>
+
+                    </div>
+                    <div class="say">
+                        <div class="ownerSay">猜你喜欢</div>
+                        <table class="guessYouLike">
+                            <tr>
+                                <th><div class="guessLikeImg"><img src="../img/background1.jpg" ></div></th>
+                                <th><div class="guessLikeImg"><img src="../img/background2.jpg" ></div></th>
+                                <th><div class="guessLikeImg"><img src="../img/background3.jpg" ></div></th>
+                            </tr>
+                            <tr>
+                                <th class="likeName">广东海洋大学学生私人公寓私人影院</th>
+                                <th class="likeName">广东海洋大学学生私人公寓私人影院</th>
+                                <th class="likeName">广东海洋大学学生私人公寓私人影院</th>
+                            </tr>
+                            <tr>
+                                <th class="likeName">￥1080/月</th>
+                                <th class="likeName">￥1080/月</th>
+                                <th class="likeName">￥1080/月</th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                </th>
+                                <th>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                </th>
+                                <th>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                    <div class="glyphicon glyphicon-star star"></div>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="foot row">
+
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4">
+                            <div>
+                                <embed class="footSvg" src="../svg/weixin.svg">
+                                <embed class="footSvg" src="../svg/qq.svg">
+                            </div>
+                            <div>
+                                <span class="text-muted">Copyright: </span>Guangdong Ocean University<br/>
+                                <span class="text-muted">Development and Maintenance: </span>Creative Software Team
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
+                            <img class="footLogo" src="../img/logo.png">
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
+                            <div class="text-muted callPhone pull-right">
+                                Contact us：<span >XXX-XXXXXXX</span>
+                            </div>
+                            <div class="pull-right">
+                                <span class="text-muted">Contact email: </span> XXXXXXXXXXX@gmail.com<br/>
+                                <span class="pull-right">About Us and Livable</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                </div>
+                <div class="alright">
                 <div class="col-lg-5 col-md-5 col-sm-5 alinfo">
                     <div>
                         <h2 class="H1">碧桂园城邦花园</h2>
@@ -103,7 +263,7 @@
                             <tr><div class="glyphicon glyphicon-star star"></div></tr>
                             <tr><div class="glyphicon glyphicon-star star"></div></tr>
                             <tr><div class="glyphicon glyphicon-star star"></div></tr>
-                            <tr><a>7条用户评价</a></tr>
+                            <tr><a href="#" class="EvalJomp">7条用户评价</a></tr>
                         </table>
                         <table class="tb1" width=100%>
                             <tr class="tr1">
@@ -134,12 +294,11 @@
 
                     </div>
                 </div>
+                </div>
             </div>
 
 </body>
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/bootstrap.js"></script>
-<script src="../js/gun.js"></script>
-
-<script src="../js/npm.js"></script>
+<script src="../js/HousingResource.js"></script>
 </html>
