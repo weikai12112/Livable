@@ -12,6 +12,8 @@ CreatPromptBox.prototype.displayPromptBox=function(text){
     $(this.newNode).fadeOut(1500);
 }
 
+let PromptBox = new CreatPromptBox();
+
 let checkScreen=function (){
     let IntvId=setInterval(function () {
         if (window.orientation == 180 || window.orientation == 0) {

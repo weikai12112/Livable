@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let PromptBox = new CreatPromptBox();
+
     let information = function () {
         this.nowSort = '综合排序';
         this.condition = {
