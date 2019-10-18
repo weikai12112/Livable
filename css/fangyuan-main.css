@@ -4,10 +4,7 @@ body{
     margin: 0;
 }
 
-.text{
-    height: 600px;
 
-}
 .text>div:first-child{
     padding:27px;
 }
@@ -18,6 +15,7 @@ body{
     margin-right: 20px;
 }
 .H1{
+    width: auto;
     margin-top:3px;
     font-weight: bolder;
 }
@@ -28,14 +26,17 @@ body{
 }
 .alright{
     width: 40%;
-    position: fixed;
     right: 0;
     padding-left: 10px;
+    float: right;
+    margin-bottom: 30px;
 }
 .alinfo{
     width: 450px;
     float: left;
     border-left: #9d9d9d solid 1px;
+    position: relative;
+    height: auto;
 }
 .gunbo{
     width: 600px;
@@ -43,22 +44,70 @@ body{
     overflow: hidden;
 
 }
+.thumbNail{
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    margin-top: 10px;
+    padding: 5px;
+}
+.thumbNail1{
+    width: 588px;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+}
+.thumbNailTwo{
+    width: 150px;
+    float: left;
+    margin-right: 5px;
+    opacity: 0.6;
+}
+.thumbNailOne{
+    width: 150px;
+    float: left;
+    margin-right: 5px;
+    opacity: 0.6;
+}
+.smallCar{
+    width: 100%;
+    border: solid 1px black;
+    height: 100px;
+}
 .alLeft{
     width:60%;
     left: 0;
+    position: relative;
+    float: left;
 }
 .Left{
     padding-right: 65px;
     width: 600px;
+    position: relative;
+}
+
+.position{
+    display: none;
+}
+.mid{
+    position: relative;
+    width: 100%;
+    padding-top: 50px;
+    overflow: auto;
 }
 .imfo{
-     height: 400px;
+     height: auto;
      border-style:solid;
      border-width:1px;
      border-radius: 15px;
      border-color: #9d9d9d;
      padding: 30px;
+     width: 450px;
+    overflow: auto;
  }
+.myBtn{
+    float: none;
+}
 @media(max-width: 1200px) {
     .alinfo{
         width: 350px;
@@ -109,6 +158,26 @@ body{
 }
 .star{
     color:#2f937d ;
+    float: left;
+    vertical-align: center;
+}
+.footStar{
+    color:#2f937d ;
+    float: left;
+    vertical-align: center;
+    font-size: 5px;
+    padding-top: 1px;
+}
+.num{
+    margin-left: 8px;
+    float: left;
+    font-family: 微软雅黑;
+    font-weight: lighter;
+    font-size: 8px;
+}
+.userEval{
+    padding-left: 15px;
+    vertical-align: center;
 }
 .tr1{
     font-family: 微软雅黑;
@@ -124,18 +193,31 @@ body{
     width: 50px;
     height: 30px;
 }
+.name3{
+    font-weight: bold;
+}
 .minNav{
-    border-bottom: #9d9d9d solid 1px;
+    border-top: #9d9d9d solid 1px;
+    height: 43px;
     width: 500px;
-    padding-top: 10px;
     position: relative;
     letter-spacing: 3px;
     background-color: white;
     z-index: 999;
 }
+.minNav2{
+    height: 0px;
+    width: auto;
+    position: fixed;
+    letter-spacing: 3px;
+    background-color: white;
+    z-index: 999;
+    top:0;
+    display: none;
+}
 .minNav>a{
     font-size: x-large;
-    font-family: 微软雅黑;
+    font-weight: bolder;
     float: left;
     color: #2f937d;
 }
@@ -145,32 +227,69 @@ body{
     font-family: 微软雅黑;
     font-weight: bolder;
     color: #2f937d;
+}.minNav2>a{
+     font-size: x-large;
+     font-weight: bolder;
+     float: left;
+     color: #2f937d;
+ }
+.minNav2>p{
+    float: left;
+    font-size: large;
+    font-family: 微软雅黑;
+    font-weight: bolder;
+    color: #2f937d;
 }
 
+.sayFirst{
+    float: left;
+    width: 500px;
+    margin-bottom: 30px;
+}
 .say{
     float: left;
-    font-family: 微软雅黑;
+    font-family: 黑体;
     width: 500px;
     border-top: 1px solid black;
     margin-bottom: 30px;
 }
+.say4{
+    float: left;
+    font-family: 黑体;
+    width: 500px;
+    border-top: 1px solid black;
+}
 .ownerSay{
-    font-size: 20px;
+    font-size: 25px;
     color: black;
     padding-bottom: 10px;
+    font-weight: bolder;
+    margin-top: 30px;
+
+}
+.ownerSay2{
+    font-size: 25px;
+    color: black;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    margin-left: 18px;
 }
 .name1{
     float: left;
-
-}.name2{
-     float: left;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+.name2{
+    float: left;
     margin-right: 8px;
-     color: #f3981c;
-
+    color: #f3981c;
+    vertical-align: middle;
  }
  .connet{
      color: #2f937d;
-
+     vertical-align: middle;
+     font-weight: bolder;
  }
  .EvalJomp{
      color: black;
@@ -180,24 +299,28 @@ body{
  }
  .eval1{
      float: left;
+     vertical-align: middle;
  }
 .eval2{
     float: left;
     color: #2f937d;
     padding-right: 3px;
+    vertical-align: middle;
+    font-weight: bolder;
 }
 .eval3{
     float: left;
+    vertical-align: middle;
 }
 .authen{
     width: 16px;
     float: left;
+    margin-left: 15px;
+    margin-right: 3px;
+    vertical-align: middle;
 }
 .ownerSayText{
     margin-top: 10px;
-    font-family: 微软雅黑;
-    font-size: 17px;
-    font-weight: lighter
 }
 .facilities>div>img{
     width: 65px;
@@ -211,26 +334,25 @@ body{
     float: left;
 }
 .more{
-    font-size: medium;
     color: #2f937d;
     float: right;
     bottom: 0;
 }
 .Position{
     float: left;
+    margin-right: 5px;
 }
 
 
 .Situation td:first-child{
-    font-family: 微软雅黑;
+
     color: #2f937d;
     width: 50px;
     vertical-align: text-top;
+    font-weight: bolder;
 }
 .Situation td{
-    font-family: "微软雅黑 Light";
     font-size: 18px;
-    font-weight: lighter;
 }
 .Situation{
     border-collapse:separate; border-spacing:0px 10px;
@@ -239,23 +361,36 @@ body{
     width: 500px;
     height: 300px;
     border: solid 1px black;
+    margin-bottom: 30px;
 }
-.guessYouLike>img{
-    width: 150px;
-    height: 100px;
-}
+
+
 .guessLikeImg{
-    width: 100%;
-    height: 100px;
-    margin-right: 15px;
+    width: 320px;
+    height: 200px;
+    margin-right: 45px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.guessLikeImgLast{
+    width: 320px;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 .guessLikeImg>img{
-    width: 150px;
-    height: 100px;
+    width: 400px;
+}
+.guessLikeImgLast>img{
+    width: 400px;
 }
 .likeName{
-    font-size: 13px;
+    font-size: 18px;
     padding-right: 15px;
+}
+.guessYouLikeMoney{
+    font-family: "微软雅黑 Light";
+    font-size: 16px;
 }
 .likeMoney{
     font-size: 8px;
@@ -270,14 +405,246 @@ body{
 }
 .user2>img{
     float: left;
-    width: 36;
     margin-right: 10px;
 }
+.alFoot{
+    width: 100%;
+    clear: both;
+    display: block;
+    vertical-align: bottom;
+    margin-top: 100px;
+}
+.guessYouLike{
+    margin: auto;
+}
+.lastSay{
+    font-family: 黑体;
+    width: 80%;
+    margin: auto;
+    border-top: darkgrey solid 1px;
+    padding-top: 20px;
 
-
-
-
-
-
-
+}
+.lunbo>li>img{
+    width: 800px;
+}
+.lunbo>li{
+    float: left;
+}
+.lunbo{
+    width: 600px;
+    height: 450px;
+    overflow: hidden;
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 5px;
+}
+.lunboLeft{
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 50px;
+    float: left;
+    position: absolute;
+    z-index: 999;
+    background-color: black;
+    margin-top: 35%;
+    opacity: 0.4;
+    padding-top: 7px;
+    margin-left: 8px;
+}
+.lunboLeft>span{
+    font-size: 30px;
+}
+.lunboRight>span{
+    font-size: 30px;
+}
+.absolute{
+    position: absolute;
+    width: 600px;
+    height: 450px;
+}
+.minAbsolute{
+    position: absolute;
+    width: 100%;
+    height: 90px;
+}
+.lunboRight{
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 50px;
+    float: right;
+    position: absolute;
+    z-index: 999;
+    background-color: black;
+    margin-top: 35%;
+    opacity: 0.4;
+    padding-top: 7px;
+    margin-right: 8px;
+}
+.BigLunbo{
+    width: 600px;
+}
+.smallImg{
+    height: 90px;
+    width: 100%;
+    padding: 0;
+}
+.smallImg>li:nth-child(1){
+    height: 90px;
+    width: 22%;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    opacity: 0.5;
+    padding: 0;
+    margin-right: 4%;
+}
+.smallImg>li:nth-child(2){
+    height: 90px;
+    width: 22%;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    opacity: 0.5;
+    padding: 0;
+    margin-right: 4%;
+}
+.smallImg>li:nth-child(3){
+    height: 90px;
+    width: 22%;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    opacity: 0.5;
+    padding: 0;
+    margin-right: 4%;
+}
+.smallImg>li:nth-child(4){
+    height: 90px;
+    width: 22%;
+    list-style: none;
+    float: left;
+    overflow: hidden;
+    opacity: 0.6;
+    padding: 0;
+}
+.smallImg>li:hover{
+    opacity: 1;
+}
+.smallImg>li>img{
+    width: 140px;
+}
+.smallImg>li.ACTIVE{
+    opacity: 1;
+}
+.identy{
+    opacity: 0.6;
+}
+.fourth{
+    margin-right: 0;
+}
+.exa>div{
+    background-color: white;
+    color: dimgray;
+    float: right;
+    align-content: center;
+    text-align: center;
+    border-radius:3px;
+    right: 0;
+    margin-right: 15px;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.exa>div>span:nth-child(1){
+    margin-left: 3px;
+}
+.exa{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+}
+.exa>div>span:nth-child(2){
+    color: palevioletred;
+    display: none;
+}
+.exa>div:hover{
+    background-color: #fbc070;
+    color: white;
+}
+.videoAndImg{
+    width: auto;
+    margin: auto;
+    bottom: 20px;
+    background-color: black;
+    background:rgba(0,0,0,0.5);
+    z-index: 999;
+    margin-top: 65%;
+    padding: 3px auto;
+    position: absolute;
+    padding: 3px;
+    margin-left: 259px;
+}
+.videoAndImg>div{
+    display: inline;
+    margin: auto;
+    color: white;
+    font-size: 16px;
+    padding: 2px;
+}
+.videoAndImg>div:nth-child(2){
+    background-color:  #fbc070;
+}
+.smallLeft{
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 90px;
+    float: left;
+    position: absolute;
+    z-index: 999;
+    background-color: black;
+    opacity: 0.4;
+    text-vertical-align: center;
+    padding-top: 37px;
+}
+.smallRight{
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 90px;
+    float: right;
+    position: absolute;
+    z-index: 999;
+    background-color: black;
+    opacity: 0.4;
+    padding-top: 35px;
+}
+.minGunbo{
+    position: relative;
+}
+.minGunbo>div:hover{
+    opacity: 0.8;
+}
+.see{
+    color: white;
+    background-color: #f3981c;
+    float: right;
+    padding: 5px;
+    padding-right: 2px;
+    margin-top: 3px;
+    letter-spacing: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.see:hover{
+    background-color:  #f18b00;
+}
+.container{
+    height: 100%;
+}
 
