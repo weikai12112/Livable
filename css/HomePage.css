@@ -1,0 +1,107 @@
+/* CSS Document */
+ul,li,a{
+	list-style:none; 
+	margin: 0;
+	padding: 0;
+}
+.person-mes{
+	position:relative;
+	top: 30px;
+	margin-left: 20%;
+	margin-right: 25%;
+	border:solid  #D4D4D6 2px;
+	border-radius: 10px;
+	box-shadow:5px 5px  10px 5px #aaa;
+}
+.img-css{
+	position: relative;
+	left: 18%;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+.btn-css{
+	margin: 0px auto;
+	position: relative;
+	left: 25%;
+}
+.img-css1{
+	position: relative;
+	padding-top: 5%;
+	left: 18%;
+	width: 70%;
+}
+.font-css{
+	color:#8D8D8F;
+	font-size: 18px;
+	text-align: center;
+}
+.ul-css{
+  padding-bottom: 15px;
+	padding-top: 10px;
+}
+
+.a{
+	color:#8D8D8F;
+	text-decoration:none;
+	padding-bottom: 10px;
+}
+
+.a:hover,.a:active
+{
+	 color: #FDC477;
+	 text-decoration:none;
+}
+
+
+
+.personal-in{
+	position:relative;
+	top: 30px;
+	margin-right: 10%;
+	
+	border:solid  #D4D4D6 2px;
+	border-radius: 30px;
+	box-shadow:5px 5px  10px 5px #aaa;
+}
+.ul-one{
+	position: relative;
+	top: 20px;
+	font-size: 23px;
+}
+.li-two{
+	float: right;
+	position: relative;
+	top: -35px;
+	right: 100px;
+	color:#000000;
+}
+.li-one{
+	margin-left: 100px;
+	color: #FDC477;
+} 
+.btn-style{
+	position: relative;
+	/*left: 400px;*/
+	float: right;
+}
+
+.body{
+	margin-top: 30px;
+	margin-bottom: 150px;
+}
+.text{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
