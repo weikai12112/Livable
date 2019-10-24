@@ -1,4 +1,5 @@
-const URL='';
+const URL='http://114.115.156.4:8001';
+const fileURL='http://114.115.156.4:9494'
 let CreatPromptBox =function(){
     let newNode=document.createElement('div');
     newNode.classList.add('PromptBox');
@@ -72,6 +73,66 @@ IndexInformation.findHome=function () {
     }
 
 }
-
-
 IndexInformation.getLocation();
+
+
+
+//————————————————————————————————交互用便捷模块————————————————————————————————
+// 使用模板如下：
+// let img=new FormData();
+// img.append('detail',value);
+// img.append('file',element.files[0]);
+// new Interactive({
+//     childPath:'/oss/uploadFile',
+//     method:'PUT',
+//     detail:img,
+//     isFile:true,
+//     successCallback:function (result) {
+//          doSomething();
+//     },
+//     errorCallback:function () {
+//          doSomething();
+//     },
+// }).init();
+
+
+let Interactive=function (inf) {
+    this.Path=inf.childPath;
+    this.Method=inf.method||'POST';
+    this.detail=inf.detail;
+    this.successCallback=inf.successCallback;
+    this.errorCallback=inf.errorCallback;
+    this.isFile=inf.isFile||false;
+    return this;
+}
+Interactive.prototype={
+    init:function () {
+        let that=this;
+        that.isFile?that.Path=fileURL+that.Path:that.Path=URL+that.Path;
+        console.log(that.detail);
+        $.ajax({
+            type: that.Method,
+            url: that.Path,
+            contentType:false,
+            dataType: 'json',
+            processData:false,
+            async: true,
+            data: that.detail,
+            success: function (result) {
+                console.log(result);
+                that.copeResult(result);
+            },
+            error: function () {
+                PromptBox.displayPromptBox('联系不上服务器啦 - 3 - ');
+            }
+        })
+        return this;
+    },
+
+    copeResult:function (result) {
+        switch (result.code) {
+            case '200':this.successCallback(result);break;
+            default:PromptBox.displayPromptBox('出现了未知错误 ');break;
+        }
+    }
+}

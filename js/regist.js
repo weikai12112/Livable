@@ -21,30 +21,28 @@ $(document).ready(function () {
     };
     CreateRegistFunction.prototype.time=0;
     CreateRegistFunction.prototype.regist=function() {
-        $.ajax({
-            type: 'post',
-            url: URL + '/regist',
-            contentType: 'application/x-www-form-urlencoded',
-            dataType: 'json',
-            async: true,
-            data: {
-                userName:document.getElementById('Name').value,
-                userSex:document.getElementById('Sex').value,
-                userPassword:document.getElementById('Password').value,
-                userEmail:document.getElementById('Email').value,
-                emailKey:document.getElementById('EmailKey').value,
+        let formdata=new FormData();
+        formdata.append('name',$('[name="Name"]').val());
+        formdata.append('gender',$('[name="Sex"]').val());
+        formdata.append('password',$('[name="Password"]').val());
+        formdata.append('email',$('[name="Email"]').val());
+        formdata.append('EmailKey',$('[name="EmailKey"]').val());
+        new Interactive({
+            childPath:'/user/register',
+            method:'POST',
+            detail:formdata,
+            successCallback:function (result) {
+                PromptBox.displayPromptBox('注册成功');
+                setTimeout(function () {
+                    window.location='login.html'
+                },3000)
+
             },
-            success: function (result) {
-                if(result.code=='200'){
-                    PromptBox.displayPromptBox('注册成功');
-                    window.location='index.html'
-                }
-                else PromptBox.displayPromptBox(result.msg);
+            errorCallback:function () {
+                
             },
-            error: function () {
-                PromptBox.displayPromptBox('服务器开小差啦');
-            }
-        })
+        }).init();
+
     }
     CreateRegistFunction.prototype.DetectionSymbol=function (value) {
         let regEn = /[`~!@#$%^&*()_+<>?:"{},.\/;'[\]]/im,
