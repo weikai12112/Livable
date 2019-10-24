@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5837d18c-44b2-49dc-ba17-16e13794ae62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ceshi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../css/fangyuan-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../css/fangyuan-main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../css/fangyuan.css" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../css/begainUpload.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/begainUpload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fangyuan.html" beforeDir="false" afterPath="$PROJECT_DIR$/fangyuan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../js/HousingResource.js" beforeDir="false" afterPath="$PROJECT_DIR$/../js/HousingResource.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LandlordInformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/LandlordInformation.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +73,7 @@
       <workItem from="1571129181982" duration="13474000" />
       <workItem from="1571208673340" duration="14783000" />
       <workItem from="1571320191425" duration="492000" />
+      <workItem from="1571663595738" duration="1061000" />
     </task>
     <servers />
   </component>
