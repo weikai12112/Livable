@@ -103,7 +103,6 @@ $(document).ready(function () {
         $('.tagList>div:last-child').html(' ');
         findHomeInf.condition.tag.forEach(value => inner += "<label class=\"label screeningConditions\">" + value + "<span class=\"glyphicon glyphicon-remove\"></span></label>");
         $('.tagList>div:last-child').append(inner);
-
     }
     information.prototype.loved = function (homeId) {
         $.ajax({

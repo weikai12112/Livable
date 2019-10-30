@@ -40,7 +40,7 @@ body{
 .head>div:first-child>div:last-child{
     display: inline;
     vertical-align: bottom;
-    font-size: 14px;
+    font-size: 13px;
     border-radius: 20px;
     border: 1px solid #e0e0e0;
     padding: 5px 10px;

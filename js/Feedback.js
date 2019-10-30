@@ -45,13 +45,13 @@ $(document).ready(function () {
             isFile:true,
             successCallback:function (result) {
                 let formdata=new FormData();
+                formdata.append('userId',1);
                 formdata.append('opinion',value);
                 formdata.append('picture',result.httpUrl);
                 new Interactive({
                     childPath:'/opinion/insertOneOpinion',
                     method:'PUT',
                     detail:formdata,
-                    isFile:true,
                     successCallback:function (result) {
                         PromptBox.displayPromptBox('非常感谢您对我们的意见，将为您跳转至主页');
                         setTimeout(function () {
@@ -96,7 +96,7 @@ $(document).ready(function () {
         FeedbackFunction.AllowFeedback[2]=FeedbackFunction.AllowFeedback[2]||FeedbackFunction.checkDetail(document.getElementsByClassName('Feedback')[0].getElementsByTagName('textarea')[0].value);
         FeedbackFunction.AllowFeedback[3]=FeedbackFunction.AllowFeedback[3]||FeedbackFunction.checkImg(document.getElementById('FeedbackImg'));
         if (FeedbackFunction.AllowFeedback[1]&&FeedbackFunction.AllowFeedback[2]&&FeedbackFunction.AllowFeedback[3]) {
-            FeedbackFunction.Feedback(document.getElementsByClassName('Feedback')[0].getElementsByTagName('textarea').value,document.getElementById('FeedbackImg'));
+            FeedbackFunction.Feedback(document.getElementsByClassName('Feedback')[0].getElementsByTagName('textarea')[0].value,document.getElementById('FeedbackImg'));
         }else {
             for (let i=0;i<3;i++){
                 FeedbackFunction.AllowFeedback[i]=false;

@@ -110,22 +110,48 @@ Interactive.prototype={
         let that=this;
         that.isFile?that.Path=fileURL+that.Path:that.Path=URL+that.Path;
         console.log(that.detail);
-        $.ajax({
-            type: that.Method,
-            url: that.Path,
-            contentType:false,
-            dataType: 'json',
-            processData:false,
-            async: true,
-            data: that.detail,
-            success: function (result) {
-                console.log(result);
-                that.copeResult(result);
-            },
-            error: function () {
-                PromptBox.displayPromptBox('联系不上服务器啦 - 3 - ');
-            }
-        })
+        switch (that.Method.toLowerCase()) {
+            case 'get':(function myGet(){
+                let formdataEntrise=that.detail.entries();
+                let form={};
+                for (let i of formdataEntrise){
+                    form[i[0]]=i[1];
+                }
+
+                $.ajax({
+                    type: that.Method,
+                    url: that.Path,
+                    contentType: 'application/x-www-form-urlencoded',
+                    dataType: 'json',
+                    async: true,
+                    data: form,
+                    success: function (result) {
+                        console.log(result);
+                        that.copeResult(result);
+                    },
+                    error: function () {
+                        PromptBox.displayPromptBox('联系不上服务器啦 - 3 - ');
+                    }
+                })
+            })();break;
+            default:$.ajax({
+                type: that.Method,
+                url: that.Path,
+                contentType:false,
+                dataType: 'json',
+                processData:false,
+                async: true,
+                data: that.detail,
+                success: function (result) {
+                    console.log(result);
+                    that.copeResult(result);
+                },
+                error: function () {
+                    PromptBox.displayPromptBox('联系不上服务器啦 - 3 - ');
+                }
+            });break;
+        }
+
         return this;
     },
 
