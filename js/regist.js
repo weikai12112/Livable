@@ -22,7 +22,7 @@ $(document).ready(function () {
     };
     CreateRegistFunction.prototype.regist=function() {
         let formdata=new FormData();
-        formdata.append('username',$('#Name').val());
+        formdata.append('name',$('#Name').val());
         formdata.append('gender',$('#Sex').val());
         formdata.append('password',$('#Password').val());
         formdata.append('email',$('#Email').val());

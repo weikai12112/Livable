@@ -250,5 +250,4 @@ $(document).ready(function () {
         //bootcssVer: 3,
 
     })
-
 })
