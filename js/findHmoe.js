@@ -197,6 +197,7 @@ $(document).ready(function () {
             // key?findHomeInf.condition.tag[0]?findHomeInf.condition.tag.push(val):findHomeInf.condition.tag[0]=val:void(0);
             console.log(event.target, findHomeInf.condition.tag);
             findHomeInf.creatTag();
+            console.log(findHomeInf);
         }
 
     })
