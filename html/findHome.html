@@ -56,9 +56,15 @@
                     </div>
 
                     <div class="input-group input-group-lg col-lg-5 col-md-6 col-sm-6 margin-top-lg">
-                        <input type="text" class="form-control"  placeholder="搜索关键词" tabindex="3">
+                        <input type="text" class="form-control"  placeholder="搜索关键词" tabindex="3" name="findByKey">
                         <span class="input-group-addon"> <img class="animated shake" id="findByKey"  src="../img/findHome.png"></span>
+
+                        <div class="col-lg-12 col-sm-12 searchPromptBox hidden">
+                            <ul class="list-group">
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -166,54 +172,7 @@
                     <button class="sort">价格<img src="../img/priceSort.png"></button>
                 </div>
             </div>
-            <div class=" margin-top-md homeCard col-lg-10 col-md-10 col-sm-12 animated bounceInLeft ">
-                <div class="col-lg-12 col-sm-12 aboutHouserOwner">
-                    <div class="pull-left">
-                        <img class="" src="../img/houseOwner.png">
-                    </div>
-                    <div class="pull-left">
-                        <span>房东昵称</span><br/>
-                        90后 | 白羊座 | 设计师
-                    </div>
-                </div>
-                <img class="pull-left" src="../img/background2.jpg">
-                <div class="pull-left col-lg-6">
-                    <h4>碧桂园城邦家园 <img class="love pull-right animated" src="../img/love.png"></h4>
-                    <h5 class="margin-top-md">麻章区 | 150m<sup>2</sup> | 东南 | 3室1厅2卫 </h5>
-                    <p class="text-muted margin-top-sm">发布时间:<span> 2019.09.07</span></p>
-                    <div class="pull-left col-lg-7 margin-top-md tag">
-                        <label>智能锁</label>
-                        <label>立即入住</label>
-                    </div>
-                    <div class="pull-right col-lg-5 margin-top-md money"><span>2000/月</span></div>
 
-
-                </div>
-            </div>
-
-            <div class=" margin-top-md homeCard col-lg-10 col-md-10 col-sm-12 animated bounceInLeft ">
-                <div class="col-lg-12 col-sm-12 aboutHouserOwner">
-                    <div class="pull-left">
-                        <img class="" src="../img/houseOwner.png">
-                    </div>
-                    <div class="pull-left">
-                        <span>房东昵称</span><br/>
-                        80后 | 狮子座 | 会计
-                    </div>
-                </div>
-                <img class="pull-left" src="../img/background2.jpg">
-                <div class="pull-left col-lg-6">
-                    <h4>万达广场 <img class="love pull-right animated " src="../img/love.png"></h4>
-                    <h5 class="margin-top-sm">武将区 | 80m<sup>2</sup> | 东南 | 2室1厅2卫 </h5>
-                    <p class="text-muted margin-top-sm">发布时间:<span> 2019.09.07</span></p>
-                    <div class="pull-left col-lg-7 margin-top-md tag">
-                        <label>智能锁</label>
-                        <label>立即入住</label>
-                    </div>
-                    <div class="pull-right col-lg-5 margin-top-md money"><span>2000/月</span></div>
-
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -246,6 +205,7 @@
 
 </body>
 <script rel="script" src="../js/jquery-3.3.1.js"></script>
+<script rel="script" src="../js/jquery.cookie.js"></script>
 <script rel="script" src="../js/bootstrap.js"></script>
 <script rel="script" src="../js/bootstrap-datetimepicker.min.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>

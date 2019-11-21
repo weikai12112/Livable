@@ -1,5 +1,6 @@
 const URL='http://114.115.156.4:8001';
-const fileURL='http://114.115.156.4:9494'
+const fileURL='http://114.115.156.4:9494';
+let city='';
 let CreatPromptBox =function(){
     let newNode=document.createElement('div');
     newNode.classList.add('PromptBox');
@@ -39,7 +40,7 @@ IndexInformation.getLocation=function () {
         $('#city')[0].innerHTML=cityName;
         if (document.getElementById('choseCity')){
             document.getElementById('choseCity').innerHTML="<img src=\"../img/lie.png\">"+cityName;
-
+            city=cityName;
         }
     } else {
         $('#city')[0].innerHTML='北京';
@@ -158,7 +159,9 @@ Interactive.prototype={
     copeResult:function (result) {
         switch (result.code) {
             case '200':this.successCallback(result);break;
+            case undefined:this.successCallback(result);break;
             default:PromptBox.displayPromptBox('出现了未知错误 ');break;
         }
     }
 }
+
