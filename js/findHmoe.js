@@ -180,14 +180,7 @@ $(document).ready(function () {
                 }
                 $('.homeDeatil').eq(0).append(str);
                 $('.love').click(function () {
-                    let aim = event.target;
-                    aim.src = '../img/loved.png';
-                    $(aim).addClass('rubberBand');
-                    $('.love').on('animationend', function () {
-
-                        $(aim).removeClass('rubberBand');
-                    })
-                    findHomeInf.loved(event.path[2].id)
+                    that.loved($(event.path[3]).attr('id'));
                 })
                 $('.homeCard').click(function () {
                     if (!/love/.test($(event.target).attr('class'))){
@@ -206,25 +199,27 @@ $(document).ready(function () {
         }).init();
     }
     information.prototype.loved = function (homeId) {
-        $.ajax({
-            type: 'post',
-            url: URL + '/loved',
-            contentType: 'application/x-www-form-urlencoded',
-            dataType: 'json',
-            async: true,
-            data: {
-                homeId: homeId
+        let information=new FormData();
+        information.append('houseId',homeId);
+        // information.append('userId','1');
+        // $.click('userId')
+        new Interactive({
+            childPath:'/house/addHouseToLike',
+            method:'GET',
+            detail:information,
+            isFile:true,
+            successCallback:function (result) {
+                let aim = event.target;
+                aim.src = '../img/loved.png';
+                $(aim).addClass('rubberBand');
+                $('.love').on('animationend', function () {
+                    $(aim).removeClass('rubberBand');
+                })
             },
-            success: function (result) {
-                if (result.code == '200') {
-                    PromptBox.displayPromptBox('收藏成功');
-                }
-                else PromptBox.displayPromptBox(result.msg);
+            errorCallback:function () {
+
             },
-            error: function () {
-                PromptBox.displayPromptBox('服务器开小差啦');
-            }
-        })
+        }).init();
     }
     information.prototype.tagInterpret=function(value){
         switch (value) {
@@ -320,8 +315,9 @@ $(document).ready(function () {
         }
 
     })
-    $('#findByKey').click(function () {
-        findHomeInf.findByKey($('#findByKey').parent().children().val());
+    $('#findByKey').parent().click(function () {
+        findHomeInf.condition.key=$('[name="findByKey"]').val();
+        findHomeInf.creatTag();
     })
     $(".queryCriteria>div:nth-last-child(2)").click(function () {
         if (event.target.tagName == 'INPUT') {
