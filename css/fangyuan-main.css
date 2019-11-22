@@ -32,11 +32,12 @@ body{
     margin-bottom: 30px;
 }
 .alinfo{
-    width: 450px;
+    width: 80%;
     float: left;
     border-left: #9d9d9d solid 1px;
     position: relative;
     height: auto;
+    padding-left: 10px;
 }
 .gunbo{
     width: 600px;
@@ -75,15 +76,15 @@ body{
     height: 100px;
 }
 .alLeft{
-    width:60%;
     left: 0;
     position: relative;
     float: left;
 }
 .Left{
-    padding-right: 65px;
-    width: 600px;
     position: relative;
+    float: right;
+    display: inline;
+    width: 75%;
 }
 
 .position{
@@ -93,7 +94,6 @@ body{
     position: relative;
     width: 100%;
     padding-top: 50px;
-    overflow: auto;
 }
 .imfo{
      height: auto;
@@ -102,39 +102,20 @@ body{
      border-radius: 15px;
      border-color: #9d9d9d;
      padding: 30px;
-     width: 450px;
+     width: 100%;
     overflow: auto;
  }
 .myBtn{
     float: none;
 }
-@media(max-width: 1200px) {
-    .alinfo{
-        width: 350px;
-    }
-    .imfo{
-        height: 370px;
-        padding: 15px;
-    }
-    .Left{
-        width: 100px;
-    }
-    .alLeft{
-        width: 200px;
-    }
-    .gunbo{
-        width: 450px;
-        height: auto;
-    }
-    
-}
+
 
 .money{
     font-family: 微软雅黑;
     font-size: 32px;
     color: #f3981c;
     font-weight: bolder;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 .gn{
     width: auto;
@@ -155,6 +136,15 @@ body{
 }
 .tb1{
     border-collapse:separate; border-spacing:0px 30px;
+}
+.tb1>div:nth-child(1)>div{
+    float: left;
+}
+.tb1>div:nth-child(2)>div{
+    float: left;
+}
+.tb1>div:nth-child(3)>div{
+    float: left;
 }
 .star{
     color:#2f937d ;
@@ -181,12 +171,12 @@ body{
 }
 .tr1{
     font-family: 微软雅黑;
-    font-size: 25px;
+    font-size: 18px;
 }
 .tr2{
     color: #9d9d9d;
     font-family: 微软雅黑;
-    font-size: 20px;
+    font-size: 12px;
     height: 10px;
 }
 .st > li {
@@ -199,7 +189,6 @@ body{
 .minNav{
     border-top: #9d9d9d solid 1px;
     height: 43px;
-    width: 500px;
     position: relative;
     letter-spacing: 3px;
     background-color: white;
@@ -207,7 +196,6 @@ body{
 }
 .minNav2{
     height: 0px;
-    width: auto;
     position: fixed;
     letter-spacing: 3px;
     background-color: white;
@@ -243,20 +231,18 @@ body{
 
 .sayFirst{
     float: left;
-    width: 500px;
     margin-bottom: 30px;
 }
 .say{
     float: left;
     font-family: 黑体;
-    width: 500px;
     border-top: 1px solid black;
     margin-bottom: 30px;
+    width: 100%;
 }
 .say4{
     float: left;
     font-family: 黑体;
-    width: 500px;
     border-top: 1px solid black;
 }
 .ownerSay{
@@ -358,31 +344,30 @@ body{
     border-collapse:separate; border-spacing:0px 10px;
 }
 .map{
-    width: 500px;
-    height: 300px;
+    height: 400px;
     border: solid 1px black;
     margin-bottom: 30px;
 }
 
 
 .guessLikeImg{
-    width: 320px;
-    height: 200px;
+    width: 260px;
+    height: 180px;
     margin-right: 45px;
     overflow: hidden;
     margin-bottom: 10px;
 }
 .guessLikeImgLast{
-    width: 320px;
-    height: 200px;
+    width: 260px;
+    height: 180px;
     overflow: hidden;
     margin-bottom: 10px;
 }
 .guessLikeImg>img{
-    width: 400px;
+    width: 120%;
 }
 .guessLikeImgLast>img{
-    width: 400px;
+    width: 120%;
 }
 .likeName{
     font-size: 18px;
@@ -415,7 +400,25 @@ body{
     margin-top: 100px;
 }
 .guessYouLike{
+    width: 100%;
+    left: 0;
+    right: 0;
+    display: inline;
     margin: auto;
+}
+.guessYouLike>div:nth-child(1){
+    margin-right: 5%;
+}
+.guessYouLike>div:nth-child(2){
+    margin-right: 5%;
+}
+.guessYouLike>div{
+    width: 30%;
+    float: left;
+    margin-bottom: 60px;
+}
+.guessYouLike>div>img{
+    width: 100%;
 }
 .lastSay{
     font-family: 黑体;
@@ -426,14 +429,14 @@ body{
 
 }
 .lunbo>li>img{
-    width: 800px;
+    width: 100%;
+    height: 90%;
 }
 .lunbo>li{
     float: left;
 }
 .lunbo{
-    width: 600px;
-    height: 450px;
+    height: 400px;
     overflow: hidden;
     list-style: none;
     padding: 0px;
@@ -463,6 +466,7 @@ body{
     position: absolute;
     width: 600px;
     height: 450px;
+    padding-left: 25%;
 }
 .minAbsolute{
     position: absolute;
@@ -484,7 +488,7 @@ body{
     margin-right: 8px;
 }
 .BigLunbo{
-    width: 600px;
+
 }
 .smallImg{
     height: 90px;
@@ -644,7 +648,5 @@ body{
 .see:hover{
     background-color:  #f18b00;
 }
-.container{
-    height: 100%;
-}
+
 

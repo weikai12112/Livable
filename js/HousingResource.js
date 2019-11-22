@@ -23,7 +23,34 @@ var sayOneMore = sayOne-minNavHeight;
 var nailImgTwo = $('.imgTwo');
 var nail = $(".thumbNail2");
 var index = 0;
+var rightWidth = $('.alinfo').width()+20;
+var windowWidth = document.body.clientWidth;
+
+// $(window).resize(function () {
+//     if (windowWidth<=1370){
+//         $(".lunbo").css({"height":"350px"})
+//     }
+// });
 $(window).ready(function () {
+    if (windowWidth<=730){
+        $(".lunbo").css({"height":"130px"})
+
+    } else
+    if (windowWidth<=935){
+        $(".lunbo").css({"height":"180px"})
+    } else
+    if (windowWidth<=1150){
+        $(".lunbo").css({"height":"230px"})
+    } else
+    if (windowWidth<=1220){
+        $(".lunbo").css({"height":"280px"})
+    } else
+        if (windowWidth<=1370){
+        $(".lunbo").css({"height":"330px"})
+    } else
+        {
+            $(".lunbo").css({"height":"390px"})
+        }
     var slider = $(".lunbo");
     var len = slider.find("li").length;
     $(".lunboLeft").click(function(){
@@ -88,6 +115,7 @@ $(window).ready(function () {
     })
 
 });
+
 $(window).scroll((function () {
     sTop = $(this).scrollTop();
     if (sTop >= my)
@@ -99,7 +127,7 @@ $(window).scroll((function () {
     {
         $(".imfo").stop(true);
         $(".imfo").animate({"height":animateHeightMore+'px'},"1","swing","callback");
-        $(".imfo").css({"position": "fixed", "top" : "0", "height":height+'px' });
+        $(".imfo").css({"position": "fixed", "top" : "0", "height":height+'px' ,"width":rightWidth + "px"});
         $(".position").slideDown();
         $(".position2").css({"display":"none"});
     } else

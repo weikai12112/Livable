@@ -70,3 +70,26 @@
 .rightText>div:nth-child(2):hover{
     background-color:#f68b01 ;
 }
+.upLoad{
+    color: white;
+    width: 180px;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    background-color: #f4971e;
+    border-radius: 3px;
+    margin-bottom: 70px;
+    font-size: 20px;
+    font-weight: 200;
+    cursor: pointer;
+    display: block;
+}
+.upLoad:hover{
+    background-color:#f68b01 ;
+    text-decoration: none;
+    color: white;
+}
