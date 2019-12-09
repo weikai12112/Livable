@@ -18,7 +18,7 @@ $("#minRoom").click(function (minRoom) {
     if (roomNum <= 0){
         roomNum = 1;
         document.getElementById("roomNum").innerHTML = roomNum;
-        alert("最多可容纳房客不得少于1")
+        PromptBox.displayPromptBox('最多可容纳房客不得少于1');
     }
 
 });
@@ -33,18 +33,18 @@ $("#minWash").click(function (minWash) {
     if (washNum <= 0){
         washNum = 1;
         document.getElementById("washNum").innerHTML = washNum;
-        alert("卫生间数量不得少于1")
+        PromptBox.displayPromptBox('卫生间数量不得少于1');
     }
 });
 $(".nextStep").click(function (next) {
     var ipt = document.getElementsByTagName("input");
     for (var i = 0; i <ipt.length; i++){
         if (ipt[i].value.length == 0){
-            alert("请将信息完善");
+            PromptBox.displayPromptBox('请将信息完善');
             ipt[i].focus();
             return false;
         } else if (/none/.test($('.okSecond').css("display"))&&/none/.test($('.okFirst').css("display"))){
-            alert("勾选“整租”或者“合租”");
+            PromptBox.displayPromptBox('勾选“整租”或者“合租”');
         }
         else {
             window.open("HomeRentalSecond.html")

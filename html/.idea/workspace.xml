@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5837d18c-44b2-49dc-ba17-16e13794ae62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../css/HomeRental.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../css/HomeRentalBasicImfo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../css/HomeRentalSecond.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../css/HousingAllocation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../css/pictureTest.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeRental.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeRentalBasicImfo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HomeRentalSecond.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingAllocation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pictureTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../img/HomeRental.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../img/home.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../img/share.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../js/HomeRental.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../js/pictureTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../css/begainUpload.css" beforeDir="false" afterPath="$PROJECT_DIR$/../css/begainUpload.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../css/fangyuan-main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../css/fangyuan-main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/begainUpload.html" beforeDir="false" afterPath="$PROJECT_DIR$/begainUpload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fangyuan.html" beforeDir="false" afterPath="$PROJECT_DIR$/fangyuan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../js/HousingResource.js" beforeDir="false" afterPath="$PROJECT_DIR$/../js/HousingResource.js" afterDir="false" />
-    </list>
+    <list default="true" id="5837d18c-44b2-49dc-ba17-16e13794ae62" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +71,7 @@
       <workItem from="1571663595738" duration="1061000" />
       <workItem from="1572351637318" duration="114000" />
       <workItem from="1573198642026" duration="10000" />
+      <workItem from="1574498070081" duration="8000" />
     </task>
     <servers />
   </component>

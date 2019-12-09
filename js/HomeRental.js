@@ -26,11 +26,11 @@ $(".nextStep").click(function (next) {
     var ipt = document.getElementsByTagName("input");
     for (var i = 0; i <ipt.length; i++){
         if (ipt[i].value.length == 0){
-            alert("请将信息完善");
+            PromptBox.displayPromptBox('请将信息完善');;
             ipt[i].focus();
             return false;
         } else {
-            // window.open("HomeRentalBasicImfo.html")
+            window.open("HomeRentalBasicImfo.html")
         }
     }
 })
