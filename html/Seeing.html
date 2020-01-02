@@ -2,13 +2,14 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>HomePage</title>
+<title>seeing</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/HomePage.css">
+    <link rel="stylesheet" href="../css/findHmoe.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
-
 <body>
+
 <div class="head row">
     <div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 container">
         <div class="pull-left">
@@ -27,11 +28,11 @@
     </div>
     <div class="col-lg-4 col-md-3 col-sm-5">
         <div class="center-block">
-        <a class="" href="index.html">首页</a>
-        <a  href="findHome.html"> 租房</a>
-        <a class="aActive" href="HomePage.html">个人页面</a>
-        <a href="javascript:void(0)">发布房源</a>
-    </div>
+            <a class="" href="index.html">首页</a>
+            <a href="findHome.html"> 租房</a>
+            <a class="aActive"  href="HomePage.html">个人页面</a>
+            <a href="javascript:void(0)">发布房源</a>
+        </div>
 
     </div>
     <div class=" signed col-lg-3 col-md-3 col-sm-3">
@@ -44,7 +45,7 @@
     </div>
 </div>
 
-	<div class="container body">
+<div class="container body">
     <div class="row" >
         <div class="col-md-4 col-lg-4 col-sm-4" >
          <div class="person-mes">
@@ -57,14 +58,15 @@
 		<div>
 		<ul class="ul-css">
         <li class="font-css">
-            <a class="aActive" href="HomePage.html">个人资料</a>
+            <a class="a" href="HomePage.html">个人资料</a>
         </li>
         <li class="font-css">
-            <a class="a" href="Seeing.html">我的约看</a>
+            <a class="aActive" href="Seeing.html">我的约看</a>
         </li>
 		<li class="font-css">
-		<a class="a" href="like.html">关注过的房源|看房记录</a>
-        </li></ul>
+		<a class="a" href="like.html">关注过的房源|我喜欢</a>
+        </li>
+        </ul>
 		</div>
 		</div> 
 		</div>
@@ -73,66 +75,41 @@
 		 <div class="col-md-8 col-lg-8 col-sm-8" >
 		<div class="personal-in">
             <ul class="ul-one">
-                <li class="li-one"><a class="a" href="HomePage.html">个人信息</a></li>
-                <li class="li-two"><a class="aActive" href="papers.html">证件信息</a></li>
+                <li class="li"><a class="aActive" href="Seeing.html">我的约看</a></li>
             </ul>
 		 <img class="img-css1" src="../img/分割线2.png">
-			<form class="form-horizontal text" role="form">
-       <div class="form-group">
-      <label class="col-sm-4 control-label">真实姓名</label>
-    <div class="col-sm-6">
-      <input id="nich" type="text" class="form-control" placeholder="请输入姓名">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-4 control-label">证件类型</label>
-    <div class="col-sm-6">
-      <input id="mark" type="text" class="form-control"  placeholder="请输入证件类型">
-    </div>
-  </div>
-	<div class="form-group">
-    <label class="col-sm-4 control-label">证件号</label>
-    <div class="col-sm-6">
-      <input id="type" type="text" class="form-control"  placeholder="请输入证件照">
-    </div>
-  </div>
-</form>
-	 <div class="form-group">
-	     <div class="bnt-style col-sm-offset-4 col-sm-3 col-md-3">
-			        <button class="btn btn-warning btn-css" data-toggle="modal" data-target="#myModal">证件照上传</button>
-<!-- 模态框（Modal） -->
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-body">
-							<form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
-							证件照正面:
-							<input id="fileUp" type="file" name="fileUp" />
-							证件照反面:
-							 <input id="fileUp1" type="file" name="fileUp" />
-						   </form>
-
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-warning" data-dismiss="modal">确定</button>
-							</div>
-						</div><!-- /.modal-content -->
-					</div><!-- /.modal -->
-				</div>	
-			 
-			 
-    </div>
-    <div class=" col-sm-4">
-     <button id="butt" type="button" class="btn btn-warning">保存</button>
-    </div>
-  </div>
-  <br/>
-  <br/>
+			<table class="table table-distant">
+		  <thead>
+			<tr>
+			  <th>约看单号</th>
+			  <th>房东信息</th>
+			  <th>约看地点</th>
+			  <th>约看时间</th>
+			  <th>操作</th>
+			</tr>
+		  </thead>
+		  <tbody id="tbody">
+			<tr>
+			  <td>Tanmay</td>
+			  <td>Bangalore</td>
+			  <td>Tanmay</td>
+			  <td>Bangalore</td>
+			  <td>Tanmay</td>
+			</tr>
+			<tr>
+			  <td>Sachin</td>
+			  <td>Mumbai</td>
+			  <td>Tanmay</td>
+			  <td>Bangalore</td>
+			  <td>Tanmay</td>
+			</tr>
+		  </tbody>
+		</table>
 		</div> 
 		</div>
 		</div>
 		</div>
-
+		
 <div class="foot row">
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4">
         <div>
@@ -157,8 +134,9 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery-3.3.1.js"></script>
-<script src="../js/bootstrap.js"></script>
-<script src="../js/papers.js"></script>
+
 </body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="javascript/bootstrap.js"></script>
+<script src="../js/Seeing.js"></script>
 </html>

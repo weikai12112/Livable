@@ -15,6 +15,7 @@ ul,li,a{
 }
 .img-css{
 	position: relative;
+	width: 100px;
 	left: 18%;
 	padding-top: 20px;
 	padding-bottom: 5px;
@@ -93,8 +94,19 @@ ul,li,a{
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
-
-
+.int{
+	margin-left: 35%;
+	margin-top: 2%;
+}
+.img-style{
+	width: 150px;
+	height: 100px;
+}
+.typeface{
+	float: right;
+	position: relative;
+	right: 20%;
+}
 
 
 
