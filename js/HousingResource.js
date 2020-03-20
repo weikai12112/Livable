@@ -25,6 +25,7 @@ var nail = $(".thumbNail2");
 var index = 0;
 var rightWidth = $('.alinfo').width()+20;
 var windowWidth = document.body.clientWidth;
+var lunboWidth = $(".lunbo").height();
 
 // $(window).resize(function () {
 //     if (windowWidth<=1370){
@@ -32,6 +33,56 @@ var windowWidth = document.body.clientWidth;
 //     }
 // });
 $(window).ready(function () {
+
+    $.ajax({
+        type: 'get',
+        url: URL + '/house/getOneHouse',
+        contentType: 'application/x-www-form-urlencoded',
+        dataType: 'json',
+        async: true,
+        data :{
+            houseID:18
+        },
+        success: function (result) {
+            console.log(result);
+            console.log(result.data.title);
+            $('.H1').html(result.data.title);
+            $(".weizhi").html(result.data.city+result.data.region+result.data.address);
+            $(".money").html("￥"+result.data.rent+"/月")
+            $("#houseType").html(result.data.houseType)
+            $("#rentType").html(result.data.rentType)
+            $("#toward").html(result.data.toward)
+            $("#elevator").html(result.data.elevator)
+            $("#acreage").html(result.data.acreage)
+            console.log(result.data.picture)
+            $("#img1").attr("src",result.data.picture)
+            $("#picture1").attr("src",result.data.picture)
+            $(".ownerSayText").html(result.data.introduction)
+            // $("#img1").css({'height':330+'px'})
+            console.log(111)
+        },
+        error: function () {
+            alert('服务器开小差啦');
+        }
+    })
+
+    // console.log("1")
+    // let data=new FormData();
+    // console.log("2")
+    // new Interactive({
+    //     childPath:'GET /getAllHouse',
+    //     method:'GET',
+    //     detail:data,
+    //     isFile:true,
+    //     successCallback:function (result) {
+    //         console.log(3)
+    //     },
+    //     errorCallback:function () {
+    //         console.log(4)
+    //     },
+    // }).init();
+
+
     if (windowWidth<=730){
         $(".lunbo").css({"height":"130px"})
 
@@ -126,7 +177,7 @@ $(window).scroll((function () {
     else if (sTop >= H1)
     {
         $(".imfo").stop(true);
-        $(".imfo").animate({"height":animateHeightMore+'px'},"1","swing","callback");
+        $(".imfo").animate({"height":650+'px'},"1","swing","callback");
         $(".imfo").css({"position": "fixed", "top" : "0", "height":height+'px' ,"width":rightWidth + "px"});
         $(".position").slideDown();
         $(".position2").css({"display":"none"});

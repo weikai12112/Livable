@@ -37,6 +37,7 @@
     background-color: #f4971e;
     color: white;
     margin: auto;
+    position: relative;
     padding: 5px;
     border-radius: 2px;
     margin-top: 15px;
@@ -82,7 +83,6 @@
 }
 .rightText>div:nth-child(1){
     width: 80%;
-    height: 500px;
     box-shadow: 10px 10px 20px #737c7f;
     margin-left: 80px;
     border-radius: 15px;
@@ -137,11 +137,75 @@
     color: white;
     padding-top: 1%;
     border-radius: 5px;
-    margin-top: 40px;
+    margin-buttom: 40px;
     display: block;
 }
 .preservat:hover{
     background-color: #f68b01;
     cursor: pointer;
     color: white;
+}
+
+
+.name{
+    text-align: right;
+    line-height: 32px;
+    font-size: 16px;
+    /*color: #f68b01;*/
+}
+.line{
+    margin-bottom: 30px;
+}
+.infoIpt{
+    width: 450px;
+    border-radius: 5px;
+    outline-style: none ;
+    border: solid 1px #9d9d9d ;
+    height: 30px;
+}
+.hold{
+    padding: 40px;
+}
+.imgInp{
+  text-align: center;
+    /*color: #f68b01;*/
+    line-height: 30px;
+    position: relative;
+}
+.imgUp{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    opacity: 0;
+}
+#imgTrueShow{
+    display: none;
+}
+#imgFalseShow{
+    display: none;
+}
+.trueIpt{
+    width: 450px;
+    border-radius: 5px;
+    border: solid 1px #9d9d9d ;
+    height: 30px;
+}
+.trueIpt>img{
+    width: 100%;
+}
+.falseIpt{
+    width: 450px;
+    border-radius: 5px;
+    border: solid 1px #9d9d9d ;
+    height: 30px;
+}
+.falseIpt>img{
+    width: 100%;
+}
+.upImg{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    opacity: 0;
 }

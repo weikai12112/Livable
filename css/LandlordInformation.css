@@ -33,6 +33,7 @@
     height: 70px;
 }
 .leftText>div>div>a:nth-child(3){
+    position: relative;
     width: 110px;
     background-color: #f4971e;
     color: white;
@@ -171,4 +172,12 @@
     background-color: #f68b01;
     cursor: pointer;
     color: white;
+}
+
+
+.upImg{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    opacity: 0;
 }

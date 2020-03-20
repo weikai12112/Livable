@@ -36,6 +36,7 @@
     width: 110px;
     background-color: #f4971e;
     color: white;
+    position: relative;
     margin: auto;
     padding: 5px;
     border-radius: 2px;
@@ -82,7 +83,6 @@
 }
 .rightText>div:nth-child(1){
     width: 80%;
-    height: 500px;
     box-shadow: 10px 10px 20px #737c7f;
     margin-left: 80px;
     border-radius: 15px;
@@ -134,15 +134,19 @@
 }
 .textBottom{
     margin-top: 30px;
+    padding-left: 50px;
 }
 .textBottom>table{
     width: 80%;
     left: 0;
     right: 0;
     margin: auto;
-    text-align: center;
     font-size: 15px;
     line-height: 40px;
+}
+.textBottom li{
+    text-align: center;
+
 }
 .tdOne{
     color: white;
@@ -161,7 +165,7 @@
     color: white;
     text-decoration: none;
 }
-.tdTwo>img{
+.sImg{
     width: 20px;
 }
 .tdThree>img{
@@ -169,4 +173,24 @@
 }
 .tdFour>img{
     width: 20px;
+}
+.line{
+    margin-bottom: 15px;
+}
+.title{
+    font-size: 16px;
+
+}
+.title img{
+    margin-right: 10px;
+}
+.title>div{
+    padding-bottom: 10px;
+}
+
+.upImg{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    opacity: 0;
 }

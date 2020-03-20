@@ -7,12 +7,12 @@ let CreatPromptBox =function(){
     newNode.style.display='none';
     document.body.appendChild(newNode);
     this.newNode=newNode;
-}
+};
 CreatPromptBox.prototype.displayPromptBox=function(text){
     this.newNode.innerText=text;
     $(this.newNode).fadeIn(500);
     $(this.newNode).fadeOut(1500);
-}
+};
 
 let PromptBox = new CreatPromptBox();
 
@@ -26,7 +26,6 @@ let checkScreen=function (){
         }
         window.clearInterval(IntvId);
     },1000)
-
 }
 
 let IndexInformation={
@@ -78,7 +77,7 @@ IndexInformation.getLocation();
 
 
 
-//————————————————————————————————交互用便捷模块————————————————————————————————
+// ————————————————————————————————交互用便捷模块————————————————————————————————
 // 使用模板如下：
 // let img=new FormData();
 // img.append('detail',value);
@@ -165,3 +164,28 @@ Interactive.prototype={
     }
 }
 
+
+
+$(".center-block").find('a').eq(3).click(function () {
+    console.log(1)
+    $.ajax({
+        url: 'http://114.115.156.4:8001/getLandlordState',
+        type: 'get',
+        success(res){
+            if (res.data == 555){
+                PromptBox.displayPromptBox('未审核')
+
+            }
+            if (res.data == 566){
+                PromptBox.displayPromptBox('审核未通过，请重新审核')
+                setTimeout(function () {
+                    $(location).attr('href','../html/LandlordInformation.html')
+                },2000)
+            }
+            if (res.data == 567){
+                $(location).attr('href','../html/homeSend.html')
+            }
+            console.log(res)
+        }
+    })
+})

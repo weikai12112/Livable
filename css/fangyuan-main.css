@@ -45,6 +45,12 @@ body{
     overflow: hidden;
 
 }
+.weizhi{
+    float: left;
+}
+#houseType{
+    width: 50px;
+}
 .thumbNail{
     width: 100%;
     height: 100px;
@@ -441,6 +447,9 @@ body{
     list-style: none;
     padding: 0px;
     margin-bottom: 5px;
+}
+.lunbo>li{
+    width: 100%;
 }
 .lunboLeft{
     top: 0;

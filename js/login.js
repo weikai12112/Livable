@@ -23,7 +23,9 @@ $(document).ready(function () {
             detail:img,
             isFile:false,
             successCallback:function (result) {
-                console.log(123);
+                console.log(result);
+                $.cookie('User',JSON.stringify(result.data))
+                $(location).attr('href','../html/index.html')
             },
             errorCallback:function () {
                 console.log(222);

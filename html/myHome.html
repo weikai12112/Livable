@@ -48,8 +48,10 @@
         <div>
             <div>
                 <div>房东认证</div>
-                <div><img class="headImg img-circle" src="../img/head_test.jpg"></div>
-                <a>本地上传</a>
+                <div><img class="headImg img-circle" src="../img/head_test.jpg" id="headImg"></div>
+                <a>本地上传
+                    <input type="file" id="upImg" onchange="upFile()" class="upImg">
+                </a>
                 <div class="leftHover">
                     <a href="LandlordInformation.html">个人资料</a>
                     <a href="Certificates.html">证件资料</a>
@@ -66,64 +68,48 @@
                 <a>我的房源</a>
             </div>
             <div class="textBottom">
-                <table>
-                    <tr>
-                        <td><a href="#" class="tdOne">全选</a></td>
-                        <td><div class="tdTwo"><img src="../img/pen.png" >房源名称</div></td>
-                        <td><div class="tdThree"><img src="../img/number.png">房源编号</div></td>
-                        <td><div class="tdFour"><img src="../img/clock.png">发布时间</div></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>广东海洋大学公寓</td>
-                        <td>31314</td>
-                        <td>2019.5.6</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>广东海洋大学公寓</td>
-                        <td>31314</td>
-                        <td>2019.5.6</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>广东海洋大学公寓</td>
-                        <td>31314</td>
-                        <td>2019.5.6</td>
-                    </tr>
-                </table>
-            <a class="preservat">删 除</a>
+                <div class="container-fluid" id="container">
+                    <div class="row line title">
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6"><img src="../img/pen.png" class="sImg">房源名称</div>
+                        <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3"><img src="../img/clock.png" class="sImg">发布时间</div>
+                    </div>
+                </div>
+                <!--<table id="container">-->
+                    <!--<tr>-->
+                        <!--<td><div class="tdTwo">房源ID</div></td>-->
+                        <!--<td><div class="tdTwo"><img src="../img/pen.png" >房源名称</div></td>-->
+                        <!--<td><div class="tdFour"><img src="../img/clock.png">发布时间</div></td>-->
+                        <!--<td><div href="#"></div></td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td><div class="tdTwo">1</div></td>-->
+                        <!--<td><div class="tdTwo">拎包入住</div></td>-->
+                        <!--<td><div class="tdFour">2020-3-12</div></td>-->
+                        <!--<td><a href="#" class="tdOne">删除</a></td>-->
+                    <!--</tr>-->
+                <!--</table>-->
         </div>
     </div>
 </div>
 </div>
-<div class="foot row alFoot">
-    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4">
-        <div>
-            <embed class="footSvg" src="../svg/weixin.svg">
-            <embed class="footSvg" src="../svg/qq.svg">
-        </div>
-        <div>
-            <span class="text-muted">Copyright: </span>Guangdong Ocean University<br/>
-            <span class="text-muted">Development and Maintenance: </span>Creative Software Team
-        </div>
-    </div>
-    <div class="col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
-        <img class="footLogo" src="../img/logo.png">
-    </div>
-    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
-        <div class="text-muted callPhone pull-right">
-            Contact us：<span >XXX-XXXXXXX</span>
-        </div>
-        <div class="pull-right">
-            <span class="text-muted">Contact email: </span> XXXXXXXXXXX@gmail.com<br/>
-            <span class="pull-right">About Us and Livable</span>
-        </div>
-    </div>
-</div>
+
 </body>
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/bootstrap.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/template.js"></script>
+<script type="template" id="tem1">
+    {{ each data as value index }}
+    <tr>
+        <td><div class="tdTwo">{{value.houseId}}</div></td>
+        <td><div class="tdTwo">{{value.houseTitle}}</div></td>
+        <td><div class="tdFour">{{publishTime}}</div></td>
+        <td><a href="#" class="tdOne">删除</a></td>
+    </tr>
+    {{/each}}
+</script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="../js/main.js"></script>
 <script src="../js/myHome.js"></script>
 
 

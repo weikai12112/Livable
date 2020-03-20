@@ -1715,7 +1715,8 @@ $(document).ready(function () {
     function selectCountry(index) {
         btn2.disabled = false;
         current2.country = index;
-        addrWrap.getElementsByTagName('li')[index].style.backgroundColor = '#ec971f';
+        addrWrap.getElementsByTagName('li')[index].style.backgroundColor = '#ff9966';
+        addrWrap.getElementsByTagName('li')[index].style.color = 'white'
         current2.countryVal = provice[current2.prov].city[current2.city].districtAndCounty[index];
     }
 

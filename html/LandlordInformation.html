@@ -41,7 +41,7 @@
             <a class="surround">用户</a>
             <a>退出</a>
         </div>
-        <img class="headImg img-circle pull-right" src="../img/head_test.jpg">
+        <img class="headImg img-circle pull-right"  src="../img/head_test.jpg">
     </div>
 </div>
 <div class="mid">
@@ -49,8 +49,11 @@
         <div>
             <div>
                 <div>房东认证</div>
-                <div><img class="headImg img-circle" src="../img/head_test.jpg"></div>
-                <a>本地上传</a>
+                <div><img class="headImg img-circle" src="../img/head_test.jpg" id="headImg"></div>
+                <a>本地上传
+                    <input type="file" id="upImg" onchange="upFile()" class="upImg">
+                </a>
+
                 <div class="leftHover">
                     <a>个人资料</a>
                     <a href="Certificates.html">证件资料</a>
@@ -67,49 +70,23 @@
                 <a href="myHome.html">我的房源</a>
             </div>
             <div class="textBottom">
+                <div class="phone">手机<input  id="phone"><div>修改</div></div>
                 <div>
-                    <div class="name">昵称<input type="text"></div>
-                    <div>星座<input type="text"></div>
+                    <div class="age">年龄<input type="text" id="age"></div>
+                    <div>职业<input type="text" id="job"></div>
                 </div>
-                <div class="phone">手机<input type="password"><div>修改</div></div>
-                <div>
-                    <div class="age">年龄<input type="text"></div>
-                    <div>职业<input type="text"></div>
-                </div>
-                <div class="habbit">兴趣<input type="text"></div>
+                <div class="habbit">兴趣<input type="text" id="hobby"></div>
             </div>
-            <a href="#" class="preservat">保  存</a>
-        </div>
-    </div>
-</div>
-<div class="foot row alFoot">
-    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4">
-        <div>
-            <embed class="footSvg" src="../svg/weixin.svg">
-            <embed class="footSvg" src="../svg/qq.svg">
-        </div>
-        <div>
-            <span class="text-muted">Copyright: </span>Guangdong Ocean University<br/>
-            <span class="text-muted">Development and Maintenance: </span>Creative Software Team
-        </div>
-    </div>
-    <div class="col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
-        <img class="footLogo" src="../img/logo.png">
-    </div>
-    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
-        <div class="text-muted callPhone pull-right">
-            Contact us：<span >XXX-XXXXXXX</span>
-        </div>
-        <div class="pull-right">
-            <span class="text-muted">Contact email: </span> XXXXXXXXXXX@gmail.com<br/>
-            <span class="pull-right">About Us and Livable</span>
+            <a class="preservat" id="save">保  存</a>
         </div>
     </div>
 </div>
 </body>
 <script src="../js/jquery-3.3.1.js"></script>
 <script src="../js/bootstrap.js"></script>
-<script src="../js/myHome.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script src="../js/main.js"></script>
+<script src="../js/lordInfo.js"></script>
 
 
 </html>
