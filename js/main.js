@@ -31,19 +31,23 @@ let checkScreen=function (){
 let IndexInformation={
 
 }
-
+var  City = document.getElementById("city")
 IndexInformation.getLocation=function () {
-    var cityCode=returnCitySN.cid;              //获取城市
-    var cityName=returnCitySN.cname.split("省")[1];
-    if (returnCitySN.cname){
-        $('#city')[0].innerHTML=cityName;
-        if (document.getElementById('choseCity')){
-            document.getElementById('choseCity').innerHTML="<img src=\"../img/lie.png\">"+cityName;
-            city=cityName;
+    if (City){
+        var cityCode=returnCitySN.cid;              //获取城市
+        var cityName=returnCitySN.cname.split("省")[1];
+
+        if (returnCitySN.cname){
+            $('#city')[0].innerHTML=cityName;
+            if (document.getElementById('choseCity')){
+                document.getElementById('choseCity').innerHTML="<img src=\"../img/lie.png\">"+cityName;
+                city=cityName;
+            }
+        } else {
+            $('#city')[0].innerHTML='北京';
         }
-    } else {
-        $('#city')[0].innerHTML='北京';
     }
+
 
 }
 IndexInformation.findHome=function () {
@@ -167,25 +171,42 @@ Interactive.prototype={
 
 
 $(".center-block").find('a').eq(3).click(function () {
-    console.log(1)
-    $.ajax({
-        url: 'http://114.115.156.4:8001/getLandlordState',
-        type: 'get',
-        success(res){
-            if (res.data == 555){
-                PromptBox.displayPromptBox('未审核')
+    $(location).attr('href','../html/LandlordInformation.html')
+})
 
-            }
-            if (res.data == 566){
-                PromptBox.displayPromptBox('审核未通过，请重新审核')
-                setTimeout(function () {
-                    $(location).attr('href','../html/LandlordInformation.html')
-                },2000)
-            }
-            if (res.data == 567){
-                $(location).attr('href','../html/homeSend.html')
-            }
-            console.log(res)
+$(".center-block").find('a').eq(2).click(function () {
+    $(location).attr('href','../html/HomePage.html')
+})
+
+if ($.cookie('User')){
+    var User = JSON.parse($.cookie('User'))
+    if (!$(location)[0].pathname.match(/index/g)&&!$(location)[0].pathname.match(/homeSend/g)){
+        $(".signed").children('div').children('a')[0].text = User.principal.name
+    }
+    $("#quit").click(function () {
+        $.removeCookie('User')
+        $(location).attr('href','../html/login.html')
+    })
+    $.ajax({
+        url:'http://114.115.156.4:8001/information/getHeadPortrait',
+        type:'get',
+        success(res){
+            $(".headImg").attr('src',res.data)
         }
     })
-})
+}else{
+    if($(".signed").length>0){
+        console.log(1)
+        $(".signed").children('div').children('a')[0].text = '登录'
+        $(".surround").click(function () {
+            $(location).attr('href','../html/login.html')
+        })
+        $(".center-block").find('a').eq(2).css({
+            'display':'none'
+        })
+        $(".center-block").find('a').eq(3).css({
+            'display':'none'
+        })
+        $(".signed").children('div').children('a')[1].text = ''
+    }
+}

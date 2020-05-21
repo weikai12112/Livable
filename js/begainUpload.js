@@ -12,3 +12,11 @@
 //
 //         }
 //     })
+$("#upload").click(function () {
+    $(".leftText").css({
+        'width':'100%'
+    })
+    setTimeout(function () {
+        $(location).attr('href','../html/homeSend.html')
+    },2000)
+})

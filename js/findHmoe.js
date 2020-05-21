@@ -243,9 +243,9 @@ $(document).ready(function () {
             case 'checkInAtOnce':return '随时入住';
         }
     }
+
     information.prototype.toDetail=function(id){
-        $.cookie('houseId',id);
-        window.location.href='fangyuan.html';
+        location.href='../html/fangyuan.html?'+'id=' + id;
     }
     let findHomeInf = new information();
 

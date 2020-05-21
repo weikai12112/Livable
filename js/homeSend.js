@@ -46,7 +46,8 @@ var data = {
     cooking : '0',
     rentWay : '月',
     picture:'',
-    rentType:'整租'
+    rentType:'整租',
+    layout:'0'
 };
 
 
@@ -77,13 +78,13 @@ $(".next").click(function () {
     nav.eq(index).css("color","#e88500").siblings().css("color","black")
     if (index>2){
         //Ajax
-        console.log($("#title").val())
-
+            console.log($("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/))
+            console.log($("#choseCity").val().match(/(\S*)/))
             data.title  = $("#title").val(),
-            data.city  = $("#choseCity").val(),
-            data.region  = $("#choseCity").val(),
+            data.city  = $("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/)[2],
+            data.region  = $("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/)[3],
             data.address  = $("#address").val(),
-            data.houseType = $("#houseType").val(),
+            data.houseType = $("#room").val()+'室'+$("#living").val()+'厅'+$("#bath").val()+'卫',
             data.rent  = $("#rent").val(),
             data.numberOfPeople  = $("#numberOfPeople").val(),
             data.rentWay = $("#rentWay").val(),
@@ -92,26 +93,33 @@ $(".next").click(function () {
             data.toward  = $("#toward").val(),
             data.carport = $("#carport").val(),
             data.energyCharge = $("#energyCharge").val(),
-            data.toward  = $("#waterCharge").val()
+            data.waterCharge  = $("#waterCharge").val(),
+            data.acreage = $("#acreage").val(),
+            data.houseProprietaryCertificate = $("#houseProprietaryCertificate").val(),
+            data.introduction = $("#introduction").val()
 
         for (let p in data){
             if (data[p]==''){
-                return alert('请完善信息')
-            } else {
-                $.ajax({
-                    url: 'http://114.115.156.4:8001/house/insert',
-                    async:true,
-                    type: 'POST',
-                    data: data,
-                    dataType: 'json',
-                    success: function (res) {
-                       console.log(res)
-                    }
-
-                })
+                return PromptBox.displayPromptBox('请完善信息')
             }
         }
         console.log(data)
+        $.ajax({
+            url: 'http://114.115.156.4:8001/house/insert',
+            async:true,
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 200){
+                    PromptBox.displayPromptBox('发布成功')
+                    setTimeout(function () {
+                        $(location).attr('href','../html/myHome.html')
+                    },2000)
+                }
+            }
+
+        })
     }
 })
 
@@ -139,7 +147,7 @@ $("#furniture").find('div').click(function () {
     }
 });
 $("#charact").find('div').click(function () {
-    let id = $(this).id
+    let id = this.id
     if ($(this).hasClass('furnitureAdd')){
         $(this).removeClass('furnitureAdd')
 
