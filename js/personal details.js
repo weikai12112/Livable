@@ -1,8 +1,7 @@
 // JavaScript Document
-let URL='http://114.115.156.4:8001/';
+let serverURL='http://114.115.156.4:8001/';
 var fileM=document.querySelector("#fileUp");
-var oImg =document.getElementById('img-src');
-oImg.src=" ";
+
 
 function selectTag(obj,vv){
     //假设所有a初始字体颜色为黑色
@@ -13,7 +12,30 @@ function selectTag(obj,vv){
     aList[i].style.color='#000';
     obj.style.color='#FDC477';
 }
+var oImg =document.getElementById('img-src');
+oImg.src=" ";
 
+$.ajax({
+	type: 'get',
+	url: serverURL + 'information/getHeadPortrait',
+	contentType: 'application/x-www-form-urlencoded',
+	dataType: 'json',
+	async: true,
+	data: {
+		//city:city[2],
+	},
+	success: function (result) {
+		if(result.code=='200'){
+			console.log(result)
+			oImg.src=result.data;
+			//document.getElementById('Name').innerHTML=result.data.Name;
+		}
+		else alert(result.msg);
+	},
+	error: function () {
+		alert('服务器开小差啦');
+	}
+})
 
 
 //var button=document.getElementById('bttn')
@@ -33,17 +55,17 @@ $("#fileUp").on("change",function() {
         contentType: false,
         processData: false,
         success: function (result) {
-            alert("恭喜你！上传成功");
+            PromptBox.displayPromptBox('加载成功')
 		//console.log(result.httpUrl);
 		  let Ourl=result.httpUrl;
 			
 		var button1=document.getElementById('bttn');
 			
-	button1.onclick=function(){
+button1.onclick=function(){
 		console.log('Ourl');
 	   $.ajax({
                 type: 'post',
-                url: URL + 'information/headPortrait',
+                url: serverURL + 'information/headPortrait',
                 contentType: 'application/x-www-form-urlencoded',
                 dataType: 'json',
                 async: true,
@@ -52,30 +74,10 @@ $("#fileUp").on("change",function() {
                 },
                 success: function (result) {
                     if(result.code=='200'){
-						alert('成功啦');
-                        //document.getElementById('Name').innerHTML=result.data.Name;
-			$.ajax({
-					type: 'get',
-					url: URL + 'information/getHeadPortrait',
-					contentType: 'application/x-www-form-urlencoded',
-					dataType: 'json',
-					async: true,
-					data: {
-						//city:city[2],
-					},
-					success: function (result) {
-						if(result.code=='200'){
-							alert("成功啦");
-							oImg.src=result.data;
-							//document.getElementById('Name').innerHTML=result.data.Name;
-						}
-						else alert(result.msg);
-					},
-					error: function () {
-						alert('服务器开小差啦');
-					}
-				})	
-						
+                        PromptBox.displayPromptBox('上传成功')
+						setInterval(function () {
+							$(location).attr('href','../html/HomePage.html')
+						},2000)
                     }
                     else alert(result.msg);
                 },
@@ -104,13 +106,10 @@ console.log(hobby.value);
 
 $.ajax({
                 type: 'get',
-                url: URL + 'information/getPersonalInformation',
+                url: serverURL + 'information/getPersonalInformation',
                 contentType: 'application/x-www-form-urlencoded',
                 dataType: 'json',
                 async: true,
-                data: {
-                    //city:city[2],
-                },
                 success: function (result) {
                     if(result.code=='200'){
                         //document.getElementById('Name').innerHTML=result.data.Name;
@@ -121,7 +120,6 @@ $.ajax({
 						age.value=result.data.age;
 						job.value=result.data.job;
 						hobby.value=result.data.hobby;
-						alert('成功啦');	
 				    button.onclick=function(){
 						//nich1=nich.value;
 						phone1=phone.value;
@@ -129,91 +127,40 @@ $.ajax({
 						age1=age.value;
 						job1=job.value;
 						hobby1=hobby.value;
-				$.ajax({
-					type: 'post',
-					url: URL + 'information/personalInformation',
-					contentType: 'application/x-www-form-urlencoded',
-					dataType: 'json',
-					async: true,
-					data: {
-						phone:phone1,
-						age:age1,
-						job:job1,
-						hobby:hobby1
-					},
-					success: function (result) {
-						if(result.code=='200'){
-							alert('成功啦');
-							//document.getElementById('Name').innerHTML=result.data.Name;
-						}
-						else alert(result.msg);
-					},
-					error: function () {
-						alert('服务器开小差啦');
-					}
-            })
-						
-						
+						$.ajax({
+							type: 'post',
+							url: serverURL + 'information/personalInformation',
+							contentType: 'application/x-www-form-urlencoded',
+							dataType: 'json',
+							async: true,
+							data: {
+								phone:phone1,
+								age:age1,
+								job:job1,
+								hobby:hobby1
+							},
+							success: function (result) {
+								if(result.code=='200'){
+									//document.getElementById('Name').innerHTML=result.data.Name;
+									$(location).attr('href','../html/HomePage.html')
+								}
+								else PromptBox.displayPromptBox(result.msg)
+							},
+							error: function () {
+								PromptBox.displayPromptBox('服务器开小差啦')
+							}
+            			})
 					}		
 						
                     }
-                    else alert(result.msg);
+                    else {
+                    	PromptBox.displayPromptBox(result.msg)
+					};
                 },
                 error: function () {
-                    alert('服务器开小差啦');
+					PromptBox.displayPromptBox('服务器开小差啦')
                 }
             })
 
 
 
-
-
-  // var oInt=document.getElementsByClassName("interest1");
-   //var oInt=document.getElementById('int');
-/*$(document).ready(function () {
-	  var Int=$(".interest1");
-	 var Input=$("#input-int");
-	  let inval=Input.val();
-	// Input.value="音乐";
-	//console.log(Input.value);
-	  //var i=0;
-	for(let i=0;i<Int.length;i++)
-	{
-	 console.log(Int[i].innerHTML);
-	 Int[i].onclick=function(){
-		 //alert(Int[i].innerHTML);
-		 var inhtml=Int[i].innerHTML;
-		console.log(inval);
-		 inval+=inhtml;
-		}
-	 }
-		$("#input-int").value=inval;
-		 console.log(Input.value);
-    })*/
-
-
-
-	/*function ss()
-	{
-	 
-	}*/
-  
-/*$.ajax({
-                type: 'post',
-                url: URL + '/findHome',
-                contentType: 'application/x-www-form-urlencoded',
-                dataType: 'json',
-                async: true,
-                data: {
-                    city:city[2],
-                },
-                success: function (result) {
-                    if(result.code=='200'){
-                        document.getElementById('Name').innerHTML=result.data.Name;
-                    }
-                    else alert(result.msg);
-                },
-                error: function () {
-                    alert('服务器开小差啦');
-                }
-            })*/

@@ -17,7 +17,6 @@ body{
 .H1{
     width: auto;
     margin-top:3px;
-    font-weight: bolder;
 }
 .color{
     color: #2f937d;
@@ -102,14 +101,15 @@ body{
     padding-top: 50px;
 }
 .imfo{
-     height: auto;
      border-style:solid;
      border-width:1px;
      border-radius: 15px;
      border-color: #9d9d9d;
      padding: 30px;
-     width: 100%;
+     width: 400px;
     overflow: auto;
+    background-color: white;
+    top: 0;
  }
 .myBtn{
     float: none;
@@ -238,6 +238,9 @@ body{
 .sayFirst{
     float: left;
     margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #5e5e5e;
+    margin-top: 20px;
 }
 .say{
     float: left;
@@ -411,6 +414,7 @@ body{
     right: 0;
     display: inline;
     margin: auto;
+    border: 1px solid #9d9d9d;
 }
 .guessYouLike>div:nth-child(1){
     margin-right: 5%;
@@ -580,6 +584,7 @@ body{
     top: 0;
     right: 0;
     margin-top: 20px;
+    z-index: 10;
 }
 .exa>div>span:nth-child(2){
     color: palevioletred;
@@ -588,7 +593,15 @@ body{
 .exa>div:hover{
     background-color: #fbc070;
     color: white;
+    cursor: pointer;
 }
+#layout img {
+    width: 80%;
+}
+#layout{
+    border: 1px solid #9d9d9d;
+}
+
 .videoAndImg{
     width: auto;
     margin: auto;
@@ -658,4 +671,97 @@ body{
     background-color:  #f18b00;
 }
 
+.imageShow img{
+    width: 100%;
+}
+.look{
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid #5e5e5e;
+    padding: 20px;
+    position: fixed;
+    z-index: 1050;
+    background-color: white;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+}
+.lookTitle{
+    text-align: center;
+    font-size: 20px;
+    color: #5e5e5e;
+    border-bottom: 1px solid #9d9d9d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.lookName{
+    text-align: right;
+    line-height: 32px;
+    font-size: 15px;
+}
+.lookIpt{
+    width: 50%;
+}
+.lookLine{
+    margin-bottom: 15px;
+}
+.lookButton{
+    margin-top: 10px;
+    width: 40%;
+    text-align: center;
+    background-color: #f18b00;
+    color: white;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+}
+.lookButton:hover{
+    background-color: #f3981c;
+}
+#lookClose{
+    float: right;
+    color: #9d9d9d;
+    cursor: pointer;
+}
+.roommate{
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    float: left;
+}
+.roommate>img{
+    width: 100%;
+}
+.roommates{
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 15px;
+    background-color: white;
+    border: 1px dashed #feaa6a;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.name{
+    color: #9d9d9d;
+    float: left;
+    font-weight: 100;
+}
+.roommateInfo{
+    color: #9d9d9d;
+    font-weight: 100;
+}
+.roommateHead{
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.line{
+    float: left;
+}
 

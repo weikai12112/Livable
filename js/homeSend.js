@@ -77,13 +77,11 @@ $(".next").click(function () {
     nav.eq(index).css("color","#e88500").siblings().css("color","black")
     if (index>2){
         //Ajax
-        console.log($("#title").val())
-
             data.title  = $("#title").val(),
             data.city  = $("#choseCity").val(),
             data.region  = $("#choseCity").val(),
             data.address  = $("#address").val(),
-            data.houseType = $("#houseType").val(),
+            data.houseType = $("#room").val()+'室'+$("#living").val()+'厅'+$("#bath").val()+'卫',
             data.rent  = $("#rent").val(),
             data.numberOfPeople  = $("#numberOfPeople").val(),
             data.rentWay = $("#rentWay").val(),
@@ -96,22 +94,26 @@ $(".next").click(function () {
 
         for (let p in data){
             if (data[p]==''){
-                return alert('请完善信息')
-            } else {
-                $.ajax({
-                    url: 'http://114.115.156.4:8001/house/insert',
-                    async:true,
-                    type: 'POST',
-                    data: data,
-                    dataType: 'json',
-                    success: function (res) {
-                       console.log(res)
-                    }
-
-                })
+                return PromptBox.displayPromptBox('请完善信息')
             }
         }
-        console.log(data)
+        console.log('ok')
+        $.ajax({
+            url: 'http://114.115.156.4:8001/house/insert',
+            async:true,
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 200){
+                    PromptBox.displayPromptBox('发布成功')
+                    setTimeout(function () {
+                        $(location).attr('href','../html/myHome.html')
+                    },2000)
+                }
+            }
+
+        })
     }
 })
 
@@ -188,7 +190,7 @@ function changepic() {
         document.getElementById('imgShow').src = this.result;
     };
 }
-
+document.location.href
 $("#upVideo").change(function() {
     upload_file = this.files[0];
     var readerVideo = new FileReader();

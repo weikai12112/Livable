@@ -39,7 +39,7 @@
 
         <div class=" pull-right">
             <a class="surround">用户</a>
-            <a>退出</a>
+            <a  id="quit">退出</a>
         </div>
         <img class="headImg img-circle pull-right" src="../img/head_test.jpg">
     </div>
@@ -48,12 +48,12 @@
     <div class="row" >
         <div class="col-md-4 col-lg-4 col-sm-4" >
          <div class="person-mes">
-		 <div class="person-css" >
-         <img class="img-css" src="../img/个人头像.png">
-	     <br/>
-		 <button class="btn btn-warning btn-css">本地上传</button>	 
+             <div class="person-css">
+                 <div class="img-css">
+                     <img id="img-src" src="../img/head_test.jpg">
+                 </div>
+                 <br/>
          </div>
-		 <img class="img-css1" src="../img/分割线.png">
 		<div>
 		<ul class="ul-css">
         <li class="font-css">
@@ -63,7 +63,7 @@
             <a class="a" href="Seeing.html">我的约看</a>
         </li>
 		<li class="font-css">
-		<a class="aActive" href="like.html">关注过的房源|看房记录</a>
+		<a class="aActive" href="like.html">我喜欢的</a>
         </li></ul>
 		</div>
 		</div> 
@@ -73,9 +73,7 @@
 		<div class="personal-in">
             <ul class="ul-one">
                 <li class="li-one"><a class="aActive" href="like.html">我喜欢</a></li>
-                <li class="li-two"><a class="a" href="Housing Resource.html">关注过的房源</a></li>
             </ul>
-		 <img class="img-css1" src="../img/分割线2.png">
 		  <table class="table">
 		  <thead>
 			<tr>
@@ -224,6 +222,8 @@
 </div>
 </body>
     <script src="../js/jquery-3.3.1.js"></script>
-	<script src="javascript/bootstrap.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="../js/main.js"></script>
 	<script src="../js/like.js"></script>
 </html>

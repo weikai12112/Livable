@@ -6,6 +6,14 @@
     float: left;
     position: relative;
 }
+.hobby{
+    display: inline;
+}
+#hobby{
+    margin-left: 30px;
+    width: 387px;
+    height: 80px;
+}
 .rightText{
     width: 70%;
     right: 0;
@@ -13,7 +21,7 @@
 }
 .leftText>div{
     width: 250px;
-    height: 350px;
+    padding-bottom: 20px;
     position: absolute;
     right: 0;
     box-shadow: 10px 10px 20px #737c7f;
@@ -72,6 +80,9 @@
     font-size: 18px;
     line-height: 35px;
 }
+.leftHover>a:nth-child(4){
+    color: #f68b01;
+}
 .leftHover>a{
     display: block;
     color: black;
@@ -125,7 +136,9 @@
     float: left;
     margin-right: 20px;
 }
-.habbit{
+#habbit{
+    float: left;
+    margin-right: 0;
 }
 .habbit>input{
     width: 60%;

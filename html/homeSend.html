@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>发布租房信息</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/homeSend.css">
     <link rel="stylesheet" href="../css/choseCity.css">
+    <link href="../css/test.css" rel="stylesheet">
 </head>
 <body>
 <div class="rentalHead container-fluid">
@@ -111,6 +113,16 @@
             </div>
             <div class="container-fluid row line">
                 <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 name">
+                    房源布局
+                </div>
+                <div class="col-lg-9 col-xs-9 col-sm-9 col-md-9">
+                    <div id="container">
+
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid row line">
+                <div class="col-lg-3 col-xs-3 col-sm-3 col-md-3 name">
                     房源描述
                 </div>
                 <div class="col-lg-9 col-xs-9 col-sm-9 col-md-9">
@@ -166,6 +178,9 @@
                 <select class="RmInIpt" id="toward">
                     <option>东</option>
                     <option>西</option>
+                    <option>南</option>
+                    <option>北</option>
+
                 </select>
                 向
             </div>
@@ -191,13 +206,15 @@
         <div class="container-fluid line">
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6 center">
                 房源户型
-                <input class="RmInIpt" placeholder="1室/1厅" id="houseType">
+                <input class="romTyp" placeholder="1" id="room">室
+                <input class="romTyp" placeholder="1" id="living">厅
+                <input class="romTyp" placeholder="1" id="bath">卫
             </div>
             <div class="col-xs-6 col-lg-6 col-md-6 col-sm-6 center">
                 电梯数量
                 <select class="RmInIpt">
+                    <option>0</option>
                     <option>1</option>
-                    <option>2</option>
                 </select>
                 个
             </div>
@@ -318,4 +335,6 @@
 <script rel="script" src="../js/main.js"></script>
 <script rel="script" src="../js/homeSendCity.js"></script>
 <script src="../js/homeSend.js"></script>
+<script src="../js/BootstrapMenu.min.js"></script>
+<script src="../js/test.js"></script>
 </html>

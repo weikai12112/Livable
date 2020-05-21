@@ -1,14 +1,13 @@
 #container{
     position: relative;
-    width: 600px;
-    height: 600px;
+    height: 500px;
     margin: auto;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    border: #000000 1px solid;
-    border-radius: 30px;
+    border: silver 1px solid;
+    border-radius: 5px;
 
 
 }

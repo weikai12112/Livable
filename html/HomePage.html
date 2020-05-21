@@ -39,19 +39,22 @@
 
         <div class=" pull-right">
             <a class="surround">用户</a>
-            <a>退出</a>
+            <a id="quit">退出</a>
         </div>
         <img class="headImg img-circle pull-right" src="../img/head_test.jpg">
     </div>
 </div>
 
 	<div class="container body">
+
     <div class="row" >
         <div class="col-md-4 col-lg-4 col-sm-4" >
          <div class="person-mes">
-		 <div person-css>
-         <img id="img-src" class="img-css" src="../img/个人头像.png">
-	     <br/>
+		 <div class="person-css">
+             <div class="img-css">
+                 <img id="img-src" src="../img/head_test.jpg">
+             </div>
+	         <br/>
         <button class="btn btn-warning btn-css" data-toggle="modal" data-target="#myModal">本地上传</button>
 <!-- 模态框（Modal） -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -60,8 +63,8 @@
 					<div class="modal-body">
 					<form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
 					选择一个文件:
-					<input id="fileUp" type="file" name="fileUp" />
-				</form>
+					    <input id="fileUp" type="file" name="fileUp" >
+				    </form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -71,7 +74,6 @@
 			</div><!-- /.modal -->
 		</div>	 
          </div>
-		 <img class="img-css1" src="../img/分割线.png">
 		<div>
 		<ul class="ul-css">
         <li class="font-css">
@@ -81,7 +83,7 @@
             <a class="a" href="Seeing.html">我的约看</a>
         </li>
 		<li class="font-css">
-		<a class="a" href="like.html">关注过的房源|看房记录</a>
+		<a class="a" href="like.html">我喜欢的</a>
         </li></ul>
 		</div>
 		</div> 
@@ -90,11 +92,10 @@
 		
 		 <div class="col-md-8 col-lg-8 col-sm-8" >
 		<div class="personal-in">
-		  <ul class="ul-one">
-          <li class="li-one"><a class="aActive"  href="HomePage.html">个人信息</a></li>
-          <li class="li-two"><a class="a" href="papers.html">证件信息</a></li>
-			</ul>
-		 <img class="img-css1" src="../img/分割线2.png">
+		    <ul class="ul-one">
+                <li class="li-one"><a class="aActive"  href="HomePage.html">个人信息</a></li>
+                <li class="li-two"><a class="a" href="papers.html">证件信息</a></li>
+            </ul>
 			<form class="form-horizontal" role="form">
        <div class="form-group">
       <label class="col-sm-4 control-label">昵称</label>
@@ -111,7 +112,7 @@
 	<div class="form-group">
     <label class="col-sm-4 control-label">密码</label>
     <div class="col-sm-6">
-      <input id="password" type="text" class="form-control"  placeholder="请输入密码">
+      <input id="password" type="password" class="form-control"  placeholder="请输入密码">
     </div>
   </div>
 	<div class="form-group">
@@ -175,7 +176,9 @@
 </div>
 </body>
 	<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/bootstrap.js"></script>
-	<script src="../js/personal details.js"></script>
-<script rel="script" src="../js/choseCity.js"></script>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="../js/main.js"></script>
+	<script src="../js/personal%20details.js"></script>
 </html>
