@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>房东系统</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/LandlordInformation.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/LandlordInformation.css">
 
 
 </head>
@@ -13,7 +13,7 @@
 <div class="head row">
     <div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 container">
         <div class="pull-left">
-            <img class="" src="../img/logo.png">
+            <img class="" src="img/logo.png">
         </div>
         <div class="pull-left">
             <span>宜居</span><br/>
@@ -30,7 +30,7 @@
         <div class="center-block">
             <a class="" href="index.html">首页</a>
             <a class="" href="findHome.html"> 租房</a>
-            <a href="myself.html">个人页面</a>
+            <a href="HomePage.html">个人页面</a>
             <a href="javascript:void(0)">发布房源</a>
         </div>
 
@@ -39,17 +39,17 @@
 
         <div class=" pull-right">
             <a class="surround">用户</a>
-            <a>退出</a>
+            <a  id="quit">退出</a>
         </div>
-        <img class="headImg img-circle pull-right"  src="../img/head_test.jpg">
+        <img class="headImg img-circle pull-right"  src="img/head_test.jpg">
     </div>
 </div>
 <div class="mid">
     <div class="leftText">
         <div>
             <div>
-                <div>房东认证</div>
-                <div><img class="headImg img-circle" src="../img/head_test.jpg" id="headImg"></div>
+                <div>房东系统</div>
+                <div><img class="headImg img-circle" src="img/head_test.jpg" id="headImg"></div>
                 <a>本地上传
                     <input type="file" id="upImg" onchange="upFile()" class="upImg">
                 </a>
@@ -58,6 +58,7 @@
                     <a>个人资料</a>
                     <a href="Certificates.html">证件资料</a>
                     <a href="myHome.html">我的房源</a>
+                    <a href="begainUpload.html">发布房源</a>
                 </div>
             </div>
         </div>
@@ -75,18 +76,19 @@
                     <div class="age">年龄<input type="text" id="age"></div>
                     <div>职业<input type="text" id="job"></div>
                 </div>
-                <div class="habbit">兴趣<input type="text" id="hobby"></div>
+                <div id="habbit">兴趣</div><textarea type="text" id="hobby"></textarea>
             </div>
             <a class="preservat" id="save">保  存</a>
         </div>
     </div>
 </div>
 </body>
-<script src="../js/jquery-3.3.1.js"></script>
-<script src="../js/bootstrap.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script src="../js/main.js"></script>
-<script src="../js/lordInfo.js"></script>
+<script src="js/main.js"></script>
+<script src="js/lordInfo.js"></script>
 
 
 </html>

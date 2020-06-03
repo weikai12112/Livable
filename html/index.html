@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>宜居</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/choseCity.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/choseCity.css">
 </head>
 <body>
 <div class="hidden" id="horizontalScreenTips"></div>
@@ -18,7 +18,7 @@
 <div class="indexHead ">
     <div class="headTop">
         <div class="pull-left col-lg-2 col-sm-3">
-            <img class="indexLogo pull-left" src="../img/logo.png">
+            <img class="indexLogo pull-left" src="img/logo.png">
             <div class="pull-left">
                 <span>宜居</span><br/>
                 悦 | 享 | 生 | 活
@@ -32,7 +32,7 @@
         <div class="pull-left col-lg-3 col-sm-5 col-lg-offset-2 ">
             <a href="index.html">首页</a>
             <a href="findHome.html">租房</a>
-            <a>个人主页</a>
+            <a href="HomePage.html">个人主页</a>
             <a onclick="homeSend()">发布房源</a>
         </div>
 
@@ -54,7 +54,7 @@
     <div class="headFoot col-lg-12">
         <div class="col-lg-12">
             <div class="col-lg-offset-2 col-sm-offset-1 col-xs-offset-1">
-                <img src="../img/familyGo.png">
+                <img src="img/familyGo.png">
             </div>
         </div>
         <div class="input-group pull-left col-lg-3 col-sm-4 col-xs-4 col-lg-offset-2 col-sm-offset-1 col-xs-offset-1">
@@ -93,28 +93,51 @@
     </div>
 </div>
 
-<div class="indexBody row">
-    <div class="displayImg col-lg-12 animated bounceInLeft">
-        <img class="col-lg-2 col-sm-3 col-xs-3 col-lg-offset-2 col-sm-offset-1 col-xs-offset-1 pull-left" src="../img/indexFoot1.jpg">
+<!--<div class="indexBody row">-->
+    <!--<div class="displayImg col-lg-12 animated bounceInLeft">-->
+        <!--<img class="col-lg-2 col-sm-3 col-xs-3 col-lg-offset-2 col-sm-offset-1 col-xs-offset-1 pull-left" src="../img/indexFoot1.jpg">-->
 
-        <div class="col-lg-2 col-sm-4 col-xs-4 col-lg-offset-1">
-            <img class="col-lg-12 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" src="../img/indexFoot2.jpg">
-        </div>
+        <!--<div class="col-lg-2 col-sm-4 col-xs-4 col-lg-offset-1">-->
+            <!--<img class="col-lg-12 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" src="../img/indexFoot2.jpg">-->
+        <!--</div>-->
 
-        <img class="col-lg-2 col-sm-3 col-xs-3 col-lg-offset-1 " src="../img/indexFoot3.jpg">
-    </div>
-</div>
-
+        <!--<img class="col-lg-2 col-sm-3 col-xs-3 col-lg-offset-1 " src="../img/indexFoot3.jpg">-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="foot row alFoot">-->
+    <!--<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4">-->
+        <!--<div>-->
+            <!--<embed class="footSvg" src="../svg/weixin.svg">-->
+            <!--<embed class="footSvg" src="../svg/qq.svg">-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<span class="text-muted">Copyright: </span>Guangdong Ocean University<br/>-->
+            <!--<span class="text-muted">Development and Maintenance: </span>Creative Software Team-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">-->
+        <!--<img class="footLogo" src="../img/logo.png">-->
+    <!--</div>-->
+    <!--<div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">-->
+        <!--<div class="text-muted callPhone pull-right">-->
+            <!--Contact us：<span >XXX-XXXXXXX</span>-->
+        <!--</div>-->
+        <!--<div class="pull-right">-->
+            <!--<span class="text-muted">Contact email: </span> XXXXXXXXXXX@gmail.com<br/>-->
+            <!--<span class="pull-right">About Us and Livable</span>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 
 </body>
-<script rel="script" src="../js/jquery-3.3.1.js"></script>
-<script rel="script" src="../js/jquery.cookie.js"></script>
-<script rel="script" src="../js/bootstrap.js"></script>
+<script rel="script" src="js/jquery-3.3.1.js"></script>
+<script rel="script" src="js/jquery.cookie.js"></script>
+<script rel="script" src="js/bootstrap.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script rel="script" src="../js/bootstrap-datetimepicker.min.js"></script>
-<script rel="script" src="../js/main.js"></script>
-<script rel="script" src="../js/index.js"></script>
-<script rel="script" src="../js/choseCity.js"></script>
+<script rel="script" src="js/bootstrap-datetimepicker.min.js"></script>
+<script rel="script" src="js/main.js"></script>
+<script rel="script" src="js/index.js"></script>
+<script rel="script" src="js/choseCity.js"></script>
 
 </html>

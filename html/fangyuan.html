@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <title>房源信息</title>
 <!--    <meta name="viewport" content="width=1,initial-scale=1,maximum-scale=1,minimum-scale=1, user-scalable=no" />-->
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/fangyuan-main.css">
-    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fangyuan-main.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/calendar.min.css">
 
 
 </head>
@@ -20,7 +21,7 @@
 <div class="head row">
     <div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 container">
         <div class="pull-left">
-            <img class="" src="../img/logo.png">
+            <img class="" src="img/logo.png">
         </div>
         <div class="pull-left">
             <span>宜居</span><br/>
@@ -37,7 +38,7 @@
         <div class="center-block">
             <a class="" href="index.html">首页</a>
             <a class="aActive" href="findHome.html"> 租房</a>
-            <a href="myself.html">个人页面</a>
+            <a href="HomePage.html">个人页面</a>
             <a href="begainUpload.html">发布房源</a>
         </div>
 
@@ -46,72 +47,67 @@
 
         <div class=" pull-right">
             <a class="surround">用户</a>
-            <a>退出</a>
+            <a id="quit">退出</a>
         </div>
-        <img class="headImg img-circle pull-right" src="../img/head_test.jpg">
+        <img class="headImg img-circle pull-right" src="img/head_test.jpg">
     </div>
 </div>
 
-
+    <div class="container-fluid look   fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="lookTitle">同城约看</div>
+        <div class="lookLine container-fluid">
+            <div class="col-xs-4 col-md-4 col-lg-4 col-sm-4 lookName">
+                时间：
+            </div>
+            <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8 lookIpt">
+                <input id="time" class="form-control" placeholder="打开日历">
+            </div>
+        </div>
+        <div class="lookLine container-fluid">
+            <div class="col-xs-4 col-md-4 col-lg-4 col-sm-4 lookName">
+                地点：
+            </div>
+            <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8 lookIpt">
+                <input  class="form-control" id="site">
+            </div>
+        </div>
+        <div class="lookButton" data-dismiss="modal">发送约看</div><a id="lookClose"data-dismiss="modal">关闭</a>
+    </div>
     <div class="mid container">
 
                 <div class="alLeft col-lg-7 col-xs-7">
                 <div class="Left " >
-                    <div class="BigLunbo">
-                        <div>
-                            <label class="lunboLeft"><span class="glyphicon glyphicon-arrow-left"></span></label>
-                            <label class="lunboRight"><span class="glyphicon glyphicon-arrow-right"></span></label>
-<!--                            <div class="absolute">-->
-<!--                                <div class="videoAndImg">-->
-<!--                                    <div>视频</div>-->
-<!--                                    <div>图片</div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-                            <ul class="lunbo">
-                                <li><img id="img1" src="../img/img1.jpg"></li>
-                                <li><img src="../img/img2.jpg"></li>
-                                <li><img src="../img/img1.jpg"></li>
-                                <li><img src="../img/img2.jpg"></li>
-                            </ul>
-                            <div class="exa">
-                                <div class="conllect">
-                                    我喜欢
-                                    <span class="glyphicon glyphicon-heart-empty"></span>
-                                    <span class="glyphicon glyphicon-heart change"></span>
-                                </div>
-                                    <div class="share">分享<span class="glyphicon glyphicon-share"></span> </div>
+                    <div class="exa">
+                        <div class="conllect">
+                            我喜欢
+                            <span class="glyphicon glyphicon-heart-empty"></span>
+                            <span class="glyphicon glyphicon-heart change"></span>
+                        </div>
+                    </div>
+
+                    <div id="myCarousel" class="carousel slide">
+                        <!-- 轮播（Carousel）指标 -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        </ol>
+                        <!-- 轮播（Carousel）项目 -->
+                        <div class="carousel-inner imageShow">
+                            <div class="item active ">
+                                <img src="" alt="First slide" id="img1">
                             </div>
                         </div>
-                        <div class="minGunbo">
-<!--                            <div class="minAbsolute">-->
-                                <div class="smallLeft"><span class="glyphicon glyphicon-chevron-left"></span></div>
-                                <div class="smallRight"><span class="glyphicon glyphicon-chevron-right"></span></div>
-<!--                            </div>-->
-                            <ul class="smallImg">
-                                <li class="ACTIVE"><img id="picture1" src="../img/img1.jpg"></li>
-                                <li><img src="../img/img2.jpg"></li>
-                                <li><img src="../img/img1.jpg"></li>
-                                <li class="fourth"><img src="../img/img2.jpg"></li>
-                            </ul>
+                        <!-- 轮播（Carousel）导航 -->
+                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
 
-                        </div>
-                    </div>
-                    <div class="minNav">
-                        <a href="#say1">房东说</a>
-<!--                        <p>·</p>-->
-<!--                        <a href="#say2">配套设施</a>-->
-                        <p>·</p>
-                        <a href="#say3">评价</a>
-                        <p>·</p>
-                        <a href="#say4">周边情况</a>
-                    </div>
-                    <div class="minNav2">
-                        <a href="#say1">房东说</a>
-                        <p>·</p>
-                        <a href="#say3">评价</a>
-                        <p>·</p>
-                        <a href="#say4">周边情况</a>
-                    </div>
+
                     <div class="sayFirst" id="say1">
                         <table>
                             <tr>
@@ -124,7 +120,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <div class="eval1">共</div><div class="eval2">12</div><div class="eval1">条评价</div><img src="../img/authen.png" class="authen" /><div class="eval3"> 已认证</div>
+                                    <div class="eval1">共</div><div class="eval2">12</div><div class="eval1">条评价</div><img src="img/authen.png" class="authen" /><div class="eval3"> 已认证</div>
                                 </td>
                             </tr>
                             <tr>
@@ -134,18 +130,23 @@
                             </tr>
                         </table>
                     </div>
-<!--                    <div class="say" id="say2">-->
-<!--                        <div class="ownerSay">配套设施</div>-->
-<!--                        <div class="facilities">-->
-<!--                            <div class="gas"><img src="../img/gas.png"></div>-->
-<!--                            <div class="HairDrierr"> <img src="../img/HairDrier.png"></div>-->
-<!--                            <div class="HeatingCooling"><img src="../img/HeatingCooling.png"></div>-->
-<!--                            <div class="TV"><img src="../img/TV.png"></div>-->
-<!--                            <div class="WashSupplies"> <img src="../img/WashSupplies.png"></div>-->
-<!--                            <div class="wifi"> <img src="../img/wifi.png"></div>-->
-<!--                        </div>-->
-<!--                        <a href="#" class="more">更多设施</a>-->
-<!--                    </div>-->
+                    <div class="say">
+                        <div class="ownerSay">房源布局</div>
+                        <div id="layout">
+                            <img src="img/layout.png">
+                        </div>
+                    </div>
+                    <div class="say" id="say2">
+                        <div class="ownerSay">配套设施</div>
+                        <div class="facilities">
+                            <div class="gas"><img src="img/gas.png"></div>
+                            <div class="HairDrierr"> <img src="img/HairDrier.png"></div>
+                            <div class="HeatingCooling"><img src="img/HeatingCooling.png"></div>
+                            <div class="TV"><img src="img/TV.png"></div>
+                            <div class="WashSupplies"> <img src="img/WashSupplies.png"></div>
+                            <div class="wifi"> <img src="img/wifi.png"></div>
+                        </div>
+                    </div>
                     <div class="say" id="say3">
                         <div class="ownerSay">评价</div>
                         <div>
@@ -160,7 +161,7 @@
                                 </tr>
                             </table>
                             <div class="user1">
-                                <img src="../img/houseOwner.png">
+                                <img src="img/houseOwner.png">
                                 <div class="name3">用户昵称</div>
                                 <div>2019年6月</div>
                             </div>
@@ -168,7 +169,7 @@
                                 位置挺不错，房东人很好，但是厕所有异味。
                             </div>
                             <div class="user1">
-                                <img src="../img/houseOwner.png">
+                                <img src="img/houseOwner.png">
                                 <div class="name3">用户昵称</div>
                                 <div>2019年6月</div>
                             </div>
@@ -211,25 +212,22 @@
                 <div class="alright col-lg-6">
                     <div class="alinfo">
                         <div class="position2">
-                            <div class="see">我要约看</div>
+                            <div class="see" data-toggle="modal" data-target="#myModal">我要约看</div>
                             <h2 class="H1" id="title">碧桂园城邦花园</h2>
                             <div class="color">[公寓]</div>
                             <p class="weizhi">广东省湛江市麻章区海大路一号广东海洋大学</p>
                         </div>
                         <div class="imfo">
-                            <div class="position">
-                                <div class="see" src="#">我要约看</div>
-                                <h2 class="H1">碧桂园城邦花园</h2>
+                            <div class="position container-fluid">
+                                <h4 class="H1">碧桂园城邦花园</h4>
                                 <div class="color">[公寓]</div>
                                 <p class="weizhi">广东省湛江市麻章区海大路一号广东海洋大学</p>
                             </div>
                             <div class="money">￥1080/月</div>
                             <div>
                                 <table>
-                                    <tr>
-                                        <td><img src="../img/Authentication.png" class="Authentication"></td>
-                                        <td><div class="gn">地铁十分钟</div></td>
-                                        <td><div class="gn">独立浴室</div></td>
+                                    <tr id="serve">
+                                        <td><img src="img/Authentication.png" class="Authentication"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -242,24 +240,6 @@
                                 <tr><a href="#" class="EvalJomp">7条用户评价</a></tr>
                             </table>
                             <table class="tb1" width=100%>
-<!--                                <div>-->
-<!--                                    <div class="tr1">2房一厅</div>-->
-<!--                                    <div class="tr1">32m</div>-->
-<!--                                    <div class="tr1">半年起</div>-->
-<!--                                </div>-->
-<!--                                <div>-->
-<!--                                    <div>户型</div>-->
-<!--                                    <div>面积</div>-->
-<!--                                    <div>租金</div>-->
-<!--                                </div>-->
-<!--                                <div>-->
-<!--                                    <div>高楼</div>-->
-<!--                                    <div>南朝北</div>-->
-<!--                                </div>-->
-<!--                                <div>-->
-<!--                                    <div>楼层</div>-->
-<!--                                    <div>朝向</div>-->
-<!--                                </div>-->
                                 <tr class="tr1">
                                     <td>
                                         <div  id="houseType">2房一厅</div>
@@ -297,96 +277,16 @@
             </div>
 
     <div class="lastSay">
-        <div class="ownerSay2">猜你喜欢</div>
-        <div class="guessYouLike">
-            <div>
-                <img src="../img/background1.jpg" >
-                <div class="likeName">广东海洋大学学生私人公寓私人影院</div>
-                <div class="guessYouLikeMoney">￥1080/月</div>
-                <div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="num">5星</div>
-                </div>
+        <div class="ownerSay2">推荐舍友</div>
+            <div class="container-fluid " id="roommate">
             </div>
-            <div>
-                <img src="../img/background1.jpg" >
-                <div class="likeName">广东海洋大学学生私人公寓私人影院</div>
-                <div class="guessYouLikeMoney">￥1080/月</div>
-                <div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="num">5星</div>
-                </div>
-            </div>
-            <div>
-                <img src="../img/background1.jpg" >
-                <div class="likeName">广东海洋大学学生私人公寓私人影院</div>
-                <div class="guessYouLikeMoney">￥1080/月</div>
-                <div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="glyphicon glyphicon-star footStar"></div>
-                    <div class="num">5星</div>
-                </div>
-            </div>
-<!--            <tr>-->
-<!--                <th><div class="guessLikeImg"><img src="../img/background1.jpg" ></div></th>-->
-<!--                <th><div class="guessLikeImg"><img src="../img/background2.jpg" ></div></th>-->
-<!--                <th><div class="guessLikeImgLast"><img src="../img/background3.jpg" ></div></th>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <th class="likeName">广东海洋大学学生私人公寓私人影院</th>-->
-<!--                <th class="likeName">广东海洋大学学生私人公寓私人影院</th>-->
-<!--                <th class="likeName">广东海洋大学学生私人公寓私人影院</th>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <th class="guessYouLikeMoney">￥1080/月</th>-->
-<!--                <th class="guessYouLikeMoney">￥1080/月</th>-->
-<!--                <th class="guessYouLikeMoney">￥1080/月</th>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <th>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="num">5星</div>-->
-<!--                </th>-->
-<!--                <th>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="num">5星</div>-->
-<!--                </th>-->
-<!--                <th>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="glyphicon glyphicon-star footStar"></div>-->
-<!--                    <div class="num">5星</div>-->
-<!--                </th>-->
-<!--            </tr>-->
-        </div>
     </div>
 
     <div class="foot row alFoot">
                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-xs-4">
                     <div>
-                        <embed class="footSvg" src="../svg/weixin.svg">
-                        <embed class="footSvg" src="../svg/qq.svg">
+                        <embed class="footSvg" src="svg/weixin.svg">
+                        <embed class="footSvg" src="svg/qq.svg">
                     </div>
                     <div>
                         <span class="text-muted">Copyright: </span>Guangdong Ocean University<br/>
@@ -394,7 +294,7 @@
                     </div>
                 </div>
                 <div class="col-lg-1 col-lg-offset-2 col-md-1 col-md-offset-2 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
-                    <img class="footLogo" src="../img/logo.png">
+                    <img class="footLogo" src="img/logo.png">
                 </div>
                 <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
                     <div class="text-muted callPhone pull-right">
@@ -408,11 +308,12 @@
             </div>
 
 </body>
-<script type="text/javascript" src="../js/map.js"></script>
-<script src="../js/jquery-3.3.1.js"></script>
-<script src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script rel="script" src="../js/main.js"></script>
-<script src="../js/HousingResource.js"></script>
-
+<script rel="script" src="js/main.js"></script>
+<script src="js/fangyuan.js"></script>
+<script src="js/calendar.min.js"></script>
 </html>
