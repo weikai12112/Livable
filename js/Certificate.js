@@ -1,3 +1,6 @@
+
+
+
 var data = {
     landlordId:'',
     idNumber:'',
@@ -79,6 +82,9 @@ $(".preservat").click(function () {
                 return PromptBox.displayPromptBox('请完善信息')
             }
         }
+
+
+
         $.ajax({
             url:'http://114.115.156.4:8001/registerLandlord',
             dataType:'json',
@@ -89,7 +95,7 @@ $(".preservat").click(function () {
             }
         })
     }else{
-        PromptBox.displayPromptBox('请先注册')
+        PromptBox.displayPromptBox('请先登录')
     }
 
 
@@ -103,10 +109,15 @@ $.ajax({
     url:'http://114.115.156.4:8001/information/getHeadPortrait',
     type:'get',
     success(res){
-        let url = res.data.replace(/\"/g,'')
-        console.log(url)
-        document.getElementById('headImg').src = url;
-        picture = url
+        if (res.code == 500){
+            PromptBox.displayPromptBox('请先登录。')
+        }
+        if (res.code == 200){
+            let url = res.data.replace(/\"/g,'')
+            console.log(url)
+            document.getElementById('headImg').src = url;
+            picture = url
+        }
     }
 })
 

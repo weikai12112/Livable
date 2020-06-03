@@ -187,6 +187,13 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+.romTyp{
+    width: 10%;
+    border-radius: 5px;
+    border: 1px solid silver;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .center{
     /*text-align:  center;*/
 }

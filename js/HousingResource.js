@@ -27,6 +27,10 @@ var rightWidth = $('.alinfo').width()+20;
 var windowWidth = document.body.clientWidth;
 var lunboWidth = $(".lunbo").height();
 
+var locat = location.href
+var locatLength = locat.length
+var loca = locat.indexOf('=')
+var houseId = locat.substr(loca+1,locatLength)
 // $(window).resize(function () {
 //     if (windowWidth<=1370){
 //         $(".lunbo").css({"height":"350px"})
@@ -34,6 +38,8 @@ var lunboWidth = $(".lunbo").height();
 // });
 $(window).ready(function () {
 
+
+    console.log(locat.substr(loca+1,locatLength))
     $.ajax({
         type: 'get',
         url: URL + '/house/getOneHouse',
@@ -41,11 +47,10 @@ $(window).ready(function () {
         dataType: 'json',
         async: true,
         data :{
-            houseID:18
+            houseID:locat.substr(loca+1,locatLength)
         },
         success: function (result) {
             console.log(result);
-            console.log(result.data.title);
             $('.H1').html(result.data.title);
             $(".weizhi").html(result.data.city+result.data.region+result.data.address);
             $(".money").html("￥"+result.data.rent+"/月")
@@ -54,18 +59,51 @@ $(window).ready(function () {
             $("#toward").html(result.data.toward)
             $("#elevator").html(result.data.elevator)
             $("#acreage").html(result.data.acreage)
-            console.log(result.data.picture)
             $("#img1").attr("src",result.data.picture)
             $("#picture1").attr("src",result.data.picture)
             $(".ownerSayText").html(result.data.introduction)
-            // $("#img1").css({'height':330+'px'})
-            console.log(111)
+            if (result.data.allocation)
+            console.log(result.data.feature)
+            let homeFeature = result.data.feature
+            console.log(homeFeature)
+            for (let a in homeFeature){
+                if (homeFeature[a] == 1){
+                    console.log(a)
+                    let serve = feature(a)
+                    console.log(serve)
+                    let serv =  '<td><div class="gn">'+serve+'</div></td>'
+                    $("#serve").append(serv)
+                }
+            }
+
+
         },
         error: function () {
             alert('服务器开小差啦');
         }
     })
-
+    function feature(a){
+        switch (a) {
+            case '独立卫浴':return 'independentBathroom';
+            case '独立阳台':return 'independentBalcony';
+            case '智能锁':return 'smartSock';
+            case '可自行装修':return 'selfDecorating';
+            case '首次出租':return 'firstRent';
+            case '可立即入住':return 'fullyFurnished';
+            case '地铁十分钟':return 'independentBathroom';
+            case '随时看房':return 'anyTimeToSee';
+            case '随时入住':return 'checkInAtOnce';
+            case 'independentBathroom':return '独立卫浴';
+            case 'independentBalcony':return '独立阳台';
+            case 'smartSock':return '智能锁';
+            case 'selfDecorating':return '可自行装修';
+            case 'firstRent':return '首次出租';
+            case 'fullyFurnished':return '拎包入住';
+            case 'independentBathroom':return '地铁十分钟';
+            case 'anyTimeToSee':return '随时看房';
+            case 'checkInAtOnce':return '随时入住';
+        }
+    }
     // console.log("1")
     // let data=new FormData();
     // console.log("2")
@@ -128,25 +166,7 @@ $(window).ready(function () {
         $(".lunbo li").eq(index).show().siblings("li").hide();
         $(".smallImg").find("li").eq(index).addClass("ACTIVE").siblings("li").removeClass("ACTIVE");
     }
-    $(".lunboLeft").mouseover(function(){
-        $(".lunboLeft").css({"opacity":"0.8"});
-    });
-    $(".lunboLeft").mouseout(function(){
-        $(".lunboLeft").css({"opacity":"0.4"});
-    });
-    $(".lunboRight").mouseover(function(){
-        $(".lunboRight").css({"opacity":"0.8"});
-    });
-    $(".lunboRight").mouseout(function(){
-        $(".lunboRight").css({"opacity":"0.4"});
-    });
-//     $(".lunboLeft").onmouseover(function () {
-//         $(".lunboLeft").css({"opacity":"0.8"})
-// })
-//     $(".lunboRight").hover(function () {
-//         $(".lunboRight").css({"opacity":"0.8"})
-//     })
-    $(".alinfo").css({"height":leftHeight+'px'});
+
     // $(".thumbNail2").text(nailImgTwo);
     $("#say1").onclick=function(){
         (scrollTo(sayOneMore))
@@ -172,7 +192,6 @@ $(window).scroll((function () {
     if (sTop >= my)
     {
         $(".imfo").css({"position": "absolute",  "top":"auto" ,"bottom":"0"});
-        $(".alinfo").css({"height":leftHeight+'px'});
     }
     else if (sTop >= H1)
     {
@@ -201,3 +220,39 @@ $(window).scroll((function () {
     }
 
 }));
+$("#time").click(function () {
+    xvDate({
+        'targetId':'time',//时间写入对象的id
+        'triggerId':['time'],//触发事件的对象id
+        'alignId':'time',//日历对齐对象
+        'format':'-',//时间格式 默认'YYYY-MM-DD HH:MM:SS'
+        'min':'2020-03-20 10:00:00',//最大时间
+        'max':'2099-10-30 10:00:00'//最小时间
+    });
+})
+$(".lookButton").click(function () {
+    let  time = $("#time").val()
+    let data = {
+        houseId:houseId,
+        data:time.slice(0,10),
+        site:$("#site").val()
+    }
+    console.log(data)
+    $.ajax({
+        url:'http://114.115.156.4:8001/looking/insertLooking',
+        type: 'post',
+        data:data,
+        success(res){
+            if (res.code == 200){
+                setTimeout(function () {
+                    PromptBox.displayPromptBox('发送成功')
+                },1000)
+                if (res.code == 500) {
+                    setTimeout(function () {
+                        PromptBox.displayPromptBox('发送失败，已发送')
+                    }, 1000)
+                }
+            }
+        }
+    })
+})

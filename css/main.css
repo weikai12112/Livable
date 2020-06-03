@@ -204,6 +204,7 @@ body{
     padding-top: 0px;
     text-align: center;
     padding: 5px;
+    z-index: 999;
 }
 /*---------------------------------自制特效-----------------------------------------*/
 .surround{
