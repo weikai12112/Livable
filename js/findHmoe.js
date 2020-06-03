@@ -246,7 +246,9 @@ $(document).ready(function () {
             case 'checkInAtOnce':return '随时入住';
         }
     }
+
     information.prototype.toDetail=function(id){
+<<<<<<< HEAD
         // $.cookie('houseId',id);
         // window.location.href='fangyuan.html';
         location.href='../html/fangyuan.html?'+'id=' + id;
@@ -318,6 +320,83 @@ $(document).ready(function () {
             },
         }).init();
     }
+=======
+<<<<<<< HEAD
+        // $.cookie('houseId',id);
+        // window.location.href='fangyuan.html';
+        location.href='../html/fangyuan.html?'+'id=' + id;
+    }
+    information.prototype.findHomeByCity=function(){
+        let that=this;
+        let mykey=new FormData();
+        mykey.append('city',$.cookie('lie').split(' ')[1]);
+        mykey.append('region',$.cookie('lie').split(' ')[2]);
+        new Interactive({
+            childPath:'/house/search',
+            method:'post',
+            detail:mykey,
+            successCallback:function (result) {
+                $('.homeDeatil').eq(0).html('<div class="col-lg-12 ">\n' +
+                    '                <div>已为您找到<span id="homeNumber">'+(()=>{if (result.data){return result.data.length} return 0 })()+'</span>套房</div>\n' +
+                    '                <div class="">\n' +
+                    '                    <button class="sort chosedSort">综合排序</button>\n' +
+                    '                    <button class="sort">评价最高</button>\n' +
+                    '                    <button class="sort">价格<img src="../img/priceSort.png"></button>\n' +
+                    '                </div>\n' +
+                    '            </div>');
+                let str='';
+                for (let i of result.data){
+                    let tag='';
+                    for (let d in i.feature) {
+                        i.feature[d]&&that.tagInterpret(d)?tag+='                        <label>'+that.tagInterpret(d)+'</label>\n':void(0);
+                    }
+                    str+='<div class=" margin-top-md homeCard col-lg-10 col-md-10 col-sm-12 animated bounceInLeft " id="'+i.houseId+'">\n' +
+                        '                <div class="col-lg-12 col-sm-12 aboutHouserOwner">\n' +
+                        '                    <div class="pull-left">\n' +
+                        '                        <img class="" src="../img/houseOwner.png">\n' +
+                        '                    </div>\n' +
+                        '                    <div class="pull-left">\n' +
+                        '                        <span>房东昵称</span><br/>\n' +
+                        '                        90后 | 白羊座 | 设计师\n' +
+                        '                    </div>\n' +
+                        '                </div>\n' +
+                        '                <img class="pull-left" src="'+i.picture+'">\n' +
+                        '                <div class="pull-left col-lg-6">\n' +
+                        '                    <h4>'+i.title+' <img class="love pull-right animated" src="../img/love.png"></h4>\n' +
+                        '                    <h5 class="margin-top-md">'+i.region+' | '+i.acreage+'m<sup>2</sup> | '+i.toward+' | '+i.houseType+' </h5>\n' +
+                        '                    <p class="text-muted margin-top-sm">发布时间:<span> 2019.09.07</span></p>\n' +
+                        '                    <div class="pull-left col-lg-7 margin-top-md tag">\n' +
+                        tag +
+                        '                    </div>\n' +
+                        '                    <div class="pull-right col-lg-5 margin-top-md money"><span>'+i.rent+'/月</span></div>\n' +
+                        '\n' +
+                        '\n' +
+                        '                </div>\n' +
+                        '            </div>';
+                }
+                $('.homeDeatil').eq(0).append(str);
+                $('.love').click(function () {
+                    that.loved($(event.path[3]).attr('id'));
+                })
+                $('.homeCard').click(function () {
+                    if (!/love/.test($(event.target).attr('class'))){
+                        for (let i of event.path){
+                            if (/homeCard/.test($(i).attr('class'))) {
+                                that.toDetail($(i).attr('id'));
+                            }
+                        }
+                    }
+
+                })
+            },
+            errorCallback:function () {
+            },
+        }).init();
+=======
+        location.href='../html/fangyuan.html?'+'id=' + id;
+>>>>>>> a04b8be7a3ee8ddc6148a9eead02e755d4ad3a7e
+    }
+>>>>>>> 95dbd58a4fc7114914c1ecac0b5341bae7c662a8
 
     let findHomeInf = new information();
     findHomeInf.findHomeByCity();

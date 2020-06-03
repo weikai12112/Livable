@@ -78,8 +78,16 @@ $(".next").click(function () {
     nav.eq(index).css("color","#e88500").siblings().css("color","black")
     if (index>2){
         //Ajax
+<<<<<<< HEAD
             console.log($("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/))
             console.log($("#choseCity").val().match(/(\S*)/))
+=======
+<<<<<<< HEAD
+=======
+            console.log($("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/))
+            console.log($("#choseCity").val().match(/(\S*)/))
+>>>>>>> a04b8be7a3ee8ddc6148a9eead02e755d4ad3a7e
+>>>>>>> 95dbd58a4fc7114914c1ecac0b5341bae7c662a8
             data.title  = $("#title").val(),
             data.city  = $("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/)[2],
             data.region  = $("#choseCity").val().match(/(\S*)\s(\S*)\s(\S*)/)[3],
@@ -103,7 +111,14 @@ $(".next").click(function () {
                 return PromptBox.displayPromptBox('请完善信息')
             }
         }
+<<<<<<< HEAD
+        console.log('ok')
+=======
         console.log(data)
+<<<<<<< HEAD
+=======
+>>>>>>> a04b8be7a3ee8ddc6148a9eead02e755d4ad3a7e
+>>>>>>> 95dbd58a4fc7114914c1ecac0b5341bae7c662a8
         $.ajax({
             url: 'http://114.115.156.4:8001/house/insert',
             async:true,
@@ -196,7 +211,7 @@ function changepic() {
         document.getElementById('imgShow').src = this.result;
     };
 }
-
+document.location.href
 $("#upVideo").change(function() {
     upload_file = this.files[0];
     var readerVideo = new FileReader();
